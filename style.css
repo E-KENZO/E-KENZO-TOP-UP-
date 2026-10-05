@@ -125,3 +125,15 @@ nav a:hover{
     margin-bottom:40px;
     font-size:35px;
 }
+.banner-slider{
+  width:100%;
+  overflow:hidden;
+  border-radius:15px;
+  margin:20px 0;
+}
+
+.banner-slider img{
+  width:100%;
+  height:auto;
+  display:block;
+}
