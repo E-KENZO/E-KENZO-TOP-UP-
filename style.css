@@ -88,3 +88,34 @@ header h1{
         font-size:15px;
     }
 }
+.package-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin:15px 0;
+}
+
+.package-card{
+    background:#132544;
+    border:2px solid #ffd700;
+    border-radius:12px;
+    padding:10px;
+    text-align:center;
+}
+
+.package-card img{
+    width:100%;
+    max-width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.package-card p{
+    margin:6px 0;
+    color:#fff;
+}
+
+.price{
+    color:#ffd700;
+    font-weight:bold;
+    }
