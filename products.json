@@ -1,0 +1,32 @@
+{
+  "freefire": [
+    { "id": "ff25", "name": "25 Diamonds", "price": 0 },
+    { "id": "ff50", "name": "50 Diamonds", "price": 0 },
+    { "id": "ff70", "name": "70 Diamonds", "price": 0 },
+    { "id": "ff100", "name": "100 Diamonds", "price": 0 },
+    { "id": "ff140", "name": "140 Diamonds", "price": 0 },
+    { "id": "ff210", "name": "210 Diamonds", "price": 0 },
+    { "id": "ff310", "name": "310 Diamonds", "price": 0 },
+    { "id": "ff520", "name": "520 Diamonds", "price": 0 },
+    { "id": "ff1060", "name": "1060 Diamonds", "price": 0 },
+    { "id": "ff2180", "name": "2180 Diamonds", "price": 0 },
+    { "id": "ff5600", "name": "5600 Diamonds", "price": 0 },
+
+    { "id": "weeklylite1", "name": "Weekly Lite x1", "price": 0 },
+    { "id": "weeklylite2", "name": "Weekly Lite x2", "price": 0 },
+    { "id": "weeklylite3", "name": "Weekly Lite x3", "price": 0 },
+    { "id": "weeklylite5", "name": "Weekly Lite x5", "price": 0 },
+
+    { "id": "weekly1", "name": "Weekly Membership x1", "price": 0 },
+    { "id": "weekly2", "name": "Weekly Membership x2", "price": 0 },
+    { "id": "weekly3", "name": "Weekly Membership x3", "price": 0 },
+    { "id": "weekly5", "name": "Weekly Membership x5", "price": 0 },
+
+    { "id": "monthly1", "name": "Monthly Membership x1", "price": 0 },
+    { "id": "monthly2", "name": "Monthly Membership x2", "price": 0 },
+    { "id": "monthly3", "name": "Monthly Membership x3", "price": 0 },
+    { "id": "monthly5", "name": "Monthly Membership x5", "price": 0 },
+
+    { "id": "levelup", "name": "Level Up Pass", "price": 0 }
+  ]
+    }
