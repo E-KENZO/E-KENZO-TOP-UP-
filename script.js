@@ -1,29 +1,12 @@
-const slides = document.querySelectorAll(".slide");
+const banners = [
+  "assets/banners/banner1.png",
+  "assets/banners/banner2.png",
+  "assets/banners/banner3.png"
+];
 
-let current = 0;
+let currentBanner = 0;
 
-function showSlide(index){
-
-slides.forEach((slide)=>{
-
-slide.classList.remove("active");
-
-});
-
-slides[index].classList.add("active");
-
-}
-
-setInterval(()=>{
-
-current++;
-
-if(current >= slides.length){
-
-current = 0;
-
-}
-
-showSlide(current);
-
-},3000);
+setInterval(() => {
+  currentBanner = (currentBanner + 1) % banners.length;
+  document.getElementById("banner").src = banners[currentBanner];
+}, 3000);
