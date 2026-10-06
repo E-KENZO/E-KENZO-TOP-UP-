@@ -128,3 +128,41 @@ header h1{
     box-shadow:0 0 15px #ffd700;
     transform:scale(1.05);
     }
+.id-check-box{
+    background:#132544;
+    border:2px solid #FFD700;
+    border-radius:15px;
+    padding:20px;
+    margin:20px 0;
+    text-align:center;
+}
+
+.id-check-box input{
+    width:100%;
+    padding:12px;
+    border:2px solid #FFD700;
+    border-radius:10px;
+    background:#08162d;
+    color:white;
+    font-size:16px;
+    margin-bottom:12px;
+    box-sizing:border-box;
+}
+
+.id-check-box button{
+    width:100%;
+    padding:12px;
+    background:#FFD700;
+    color:black;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#check-result{
+    margin-top:15px;
+    color:#FFD700;
+    font-weight:bold;
+    }
