@@ -188,3 +188,36 @@ header h1{
     margin:6px 0;
     font-size:15px;
 }
+/* Welcome Box */
+
+.welcome-box{
+    width:90%;
+    max-width:900px;
+    margin:20px auto;
+    padding:20px;
+    background:#132544;
+    border:2px solid #FFD700;
+    border-radius:15px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 0 15px rgba(255,215,0,0.3);
+}
+
+.welcome-box h2{
+    color:#FFD700;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+.welcome-box p{
+    font-size:16px;
+    line-height:1.8;
+    color:#f5f5f5;
+}
+
+.title{
+    text-align:center;
+    color:#FFD700;
+    margin:25px 0 15px;
+    font-size:28px;
+    }
