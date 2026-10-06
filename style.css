@@ -119,3 +119,12 @@ header h1{
     color:#ffd700;
     font-weight:bold;
     }
+.package-card{
+    cursor:pointer;
+}
+
+.package-card.active{
+    border:3px solid #ffd700;
+    box-shadow:0 0 15px #ffd700;
+    transform:scale(1.05);
+    }
