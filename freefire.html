@@ -293,8 +293,6 @@ return;
 alert("Package : " + selected.value);
 
 }
-
-</script>
 <script>
 // Banner Slider
 
@@ -303,23 +301,6 @@ const banners = [
 "assets/banners/banner2.png",
 "assets/banners/banner3.png"
 ];
-
-let currentBanner = 0;
-
-setInterval(() => {
-
-currentBanner++;
-
-if(currentBanner >= banners.length){
-
-currentBanner = 0;
-
-}
-
-document.getElementById("banner").src = banners[currentBanner];
-
-},3000);
-
 
 // Continue Button
 
