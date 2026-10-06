@@ -9,7 +9,6 @@
 
 </head>
 <body>
-
 <header>
     <h1>E-KENZO TOP UP</h1>
 </header>
@@ -257,33 +256,6 @@ Continue
 </button>
 
 </div>
-
-function goToPayment(){
-
-const uid = document.getElementById("uid").value;
-const server = document.getElementById("server").value;
-const packageName = document.getElementById("selected-package").value;
-
-if(uid==""){
-alert("Please enter your UID");
-return;
-}
-
-if(packageName==""){
-alert("Please select a package");
-return;
-}
-
-alert(
-"UID : " + uid +
-"\nServer : " + server +
-"\nPackage : " + packageName
-);
-
-}
-
-    </script>
-
 const cards = document.querySelectorAll(".package-card");
 const selected = document.getElementById("selected-package");
 
@@ -301,9 +273,8 @@ this.querySelector("p").innerText;
 };
 
 });
-
-<script>
-// Continue Button
+    <script>
+Continueinue Button
 
 function goToPayment(){
 
