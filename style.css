@@ -314,3 +314,69 @@ header h1{
     font-size:14px;
     color:#ccc;
     }
+/* Banner Text */
+
+.banner-slider{
+    position:relative;
+    overflow:hidden;
+}
+
+.banner-slider img{
+    width:100%;
+    display:block;
+}
+
+.banner-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:#fff;
+    width:90%;
+}
+
+.banner-text h2{
+    font-size:38px;
+    color:#FFD700;
+    margin-bottom:10px;
+    text-shadow:2px 2px 6px #000;
+}
+
+.banner-text p{
+    font-size:18px;
+    margin-bottom:20px;
+    text-shadow:2px 2px 6px #000;
+}
+
+.banner-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#FFD700;
+    color:#000;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.banner-btn:hover{
+    background:#fff;
+}
+
+@media (max-width:768px){
+
+.banner-text h2{
+    font-size:24px;
+}
+
+.banner-text p{
+    font-size:14px;
+}
+
+.banner-btn{
+    padding:10px 18px;
+    font-size:14px;
+}
+
+    }
