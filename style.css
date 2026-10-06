@@ -166,3 +166,22 @@ header h1{
     color:#FFD700;
     font-weight:bold;
     }
+.player-box{
+    margin-top:15px;
+    background:#132544;
+    border:2px solid #FFD700;
+    border-radius:12px;
+    padding:15px;
+    color:#fff;
+    text-align:left;
+}
+
+.player-box h3{
+    color:#00ff66;
+    margin:0 0 10px;
+}
+
+.player-box p{
+    margin:6px 0;
+    font-size:15px;
+}
