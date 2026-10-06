@@ -221,3 +221,29 @@ header h1{
     margin:25px 0 15px;
     font-size:28px;
     }
+.header{
+    background:#0d1b3d;
+    border-bottom:2px solid #FFD700;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:#FFD700;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.header nav a{
+    color:#ffffff;
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:bold;
+}
+
+.header nav a:hover{
+    color:#FFD700;
+}
