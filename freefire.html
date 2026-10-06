@@ -258,7 +258,31 @@ Continue
 
 </div>
 
-<script>
+function goToPayment(){
+
+const uid = document.getElementById("uid").value;
+const server = document.getElementById("server").value;
+const packageName = document.getElementById("selected-package").value;
+
+if(uid==""){
+alert("Please enter your UID");
+return;
+}
+
+if(packageName==""){
+alert("Please select a package");
+return;
+}
+
+alert(
+"UID : " + uid +
+"\nServer : " + server +
+"\nPackage : " + packageName
+);
+
+}
+
+    </script>
 
 const cards = document.querySelectorAll(".package-card");
 const selected = document.getElementById("selected-package");
