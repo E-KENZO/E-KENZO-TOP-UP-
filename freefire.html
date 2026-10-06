@@ -294,7 +294,20 @@ alert(
 // window.location.href="payment.html";
 
 }
+function checkUID(){
 
+const uid = document.getElementById("check-uid").value;
+
+if(uid==""){
+alert("Please enter Free Fire UID");
+return;
+}
+
+document.getElementById("check-result").innerHTML =
+"✅ UID: " + uid;
+
+    }
+    
 </script>
 
 </body>
