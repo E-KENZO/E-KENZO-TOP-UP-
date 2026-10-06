@@ -247,3 +247,26 @@ header h1{
 .header nav a:hover{
     color:#FFD700;
 }
+@media (max-width:768px){
+
+.header{
+    flex-direction:column;
+    text-align:center;
+}
+
+.logo{
+    margin-bottom:10px;
+}
+
+.header nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.header nav a{
+    margin:0;
+}
+
+    }
