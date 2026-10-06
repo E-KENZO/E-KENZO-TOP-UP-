@@ -90,24 +90,27 @@ header h1{
 }
 .package-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    margin:15px 0;
-}
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:15px;
+    }
 
 .package-card{
     background:#132544;
-    border:2px solid #ffd700;
+    border:2px solid #FFD700;
     border-radius:12px;
     padding:10px;
     text-align:center;
+    cursor:pointer;
+    transition:.3s;
 }
 
 .package-card img{
-    width:100%;
-    max-width:120px;
-    height:120px;
+    width:55px;
+    height:55px;
     object-fit:contain;
+    display:block;
+    margin:0 auto 8px;
 }
 
 .package-card p{
