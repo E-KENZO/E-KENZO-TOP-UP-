@@ -291,11 +291,22 @@ alert("Please enter Free Fire UID");
 return;
 }
 
-document.getElementById("check-result").innerHTML =
-"✅ UID: " + uid;
+document.getElementById("check-result").innerHTML = `
+<div class="player-box">
+<h3>✅ Player Found</h3>
+
+<p><b>Nickname:</b> E-KENZO TEST</p>
+
+<p><b>UID:</b> ${uid}</p>
+
+<p><b>Level:</b> 70</p>
+
+<p><b>Region:</b> Cambodia</p>
+
+</div>
+`;
 
     }
-    
 </script>
 
 </body>
