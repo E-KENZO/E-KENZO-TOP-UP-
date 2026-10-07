@@ -247,7 +247,12 @@
 
 <button onclick="goToPayment()">Confirm</button>
 <script>
+const uid = localStorage.getItem("uid");
+const packageName = localStorage.getItem("package");
 
+document.getElementById("show-uid").textContent = uid || "-";
+document.getElementById("show-package").textContent = packageName || "-";
+    
 const cards = document.querySelectorAll(".package-card");
 const selected = document.getElementById("selected-package");
 
