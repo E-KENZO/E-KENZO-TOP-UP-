@@ -380,3 +380,53 @@ header h1{
 }
 
     }
+/* Features */
+
+.features{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.features h2{
+    color:#FFD700;
+    margin-bottom:20px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.feature-card{
+    background:#132544;
+    border:2px solid #FFD700;
+    border-radius:15px;
+    padding:20px;
+    color:#fff;
+    transition:0.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 15px rgba(255,215,0,0.4);
+}
+
+.feature-card h3{
+    color:#FFD700;
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    line-height:1.6;
+}
+
+@media(max-width:768px){
+
+.feature-grid{
+    grid-template-columns:1fr;
+}
+
+    }
