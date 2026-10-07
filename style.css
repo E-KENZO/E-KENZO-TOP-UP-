@@ -465,3 +465,30 @@ header h1{
     font-size:14px;
     font-weight:bold;
         }
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:2px solid #FFD700;
+    border-radius:8px;
+    background:#1b2b4a;
+    color:white;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#FFD700;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ffea70;
+}
