@@ -139,7 +139,15 @@ header h1{
     margin:20px 0;
     text-align:center;
 }
-
+.id-check-box{
+    width:320px;
+    max-width:90%;
+    margin:20px 0 20px 20px;
+    padding:20px;
+    background:#132544;
+    border:2px solid #FFD700;
+    border-radius:15px;
+    }
 .id-check-box input{
     width:100%;
     padding:12px;
