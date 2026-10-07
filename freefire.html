@@ -287,9 +287,10 @@ alert(
 "\nPackage : " + packageName
 );
 
-// ពេលអ្នកបង្កើត payment.html អាចប្រើបន្ទាត់នេះ
-window.location.href="payment.html";
+localStorage.setItem("uid", uid);
+localStorage.setItem("package", packageName);
 
+window.location.href = "payment.html";
 }
 function checkUID(){
 
