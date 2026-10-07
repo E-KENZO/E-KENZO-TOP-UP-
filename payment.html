@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment - E-KENZO TOP UP</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<a href="freefire.html" class="back-btn">⬅️ Back</a>
+
+<header>
+<h1>💳 Payment</h1>
+</header>
+
+<div class="container">
+
+<h2>Scan KHQR</h2>
+
+<img src="assets/khqr.png" class="qr-image" alt="KHQR">
+
+<p>
+សូមស្កេន KHQR ខាងលើដើម្បីបង់ប្រាក់។
+</p>
+
+<h2>Upload Receipt</h2>
+
+<input type="file" id="receipt">
+
+<button onclick="createOrder()">
+Create Order
+</button>
+
+<p id="order-result"></p></div>
+
+<script>
+function createOrder(){
+
+const orderId = "EK" + Math.floor(Math.random()*1000000);
+
+document.getElementById("order-result").innerHTML = `
+<div class="player-box">
+<h3>✅ Order Created</h3>
+
+<p><b>Order ID:</b> ${orderId}</p>
+
+<p><b>Status:</b> Waiting for Payment Verification</p>
+
+<p>
+សូមរង់ចាំ Admin ពិនិត្យការបង់ប្រាក់របស់អ្នក។
+</p>
+
+</div>
+`;
+
+}
+</script>
+
+</body>
+</html>
