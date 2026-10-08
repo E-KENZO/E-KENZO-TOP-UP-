@@ -495,3 +495,10 @@ select {
     background: #111111;
     box-sizing: border-box;
     }
+/* Selected Diamond Package */
+.package-card.selected {
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.9);
+    border: 2px solid #ffd700;
+    transition: all 0.2s ease;
+                             }
