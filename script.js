@@ -115,3 +115,18 @@ packageCards.forEach(card => {
     });
 
 });
+// ===== GO TO PAYMENT =====
+
+if (payBtn) {
+
+    payBtn.addEventListener("click", () => {
+
+        if (!payBtn.disabled) {
+
+            window.location.href = "payment.html";
+
+        }
+
+    });
+
+}
