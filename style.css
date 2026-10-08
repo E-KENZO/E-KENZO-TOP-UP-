@@ -250,4 +250,144 @@ input{
     .game-card h3{
         font-size:15px;
     }
-    }
+/* ===== FREE FIRE ===== */
+
+.player-box{
+    width:92%;
+    max-width:420px;
+    margin:20px auto;
+    background:#ffffff;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(124,77,255,.12);
+}
+
+.player-box h2{
+    font-size:18px;
+    color:#5b21b6;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.player-box input{
+    width:100%;
+    height:50px;
+    border:2px solid #e5e7eb;
+    border-radius:12px;
+    padding:0 15px;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.player-box input:focus{
+    border-color:#7c4dff;
+}
+
+#check-btn{
+    width:100%;
+    height:50px;
+    background:#7c4dff;
+    color:#fff;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+#check-btn:active{
+    transform:scale(.98);
+}
+
+#player-name{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+    color:#16a34a;
+}
+  /* ===== PACKAGE ===== */
+
+.packages{
+    width:92%;
+    max-width:420px;
+    margin:20px auto;
+}
+
+.packages h2{
+    font-size:18px;
+    color:#5b21b6;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.package-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.package-card{
+    background:#ffffff;
+    border-radius:16px;
+    padding:15px;
+    text-align:center;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:.25s;
+    box-shadow:0 6px 15px rgba(124,77,255,.10);
+}
+
+.package-card img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    margin:0 auto 10px;
+}
+
+.package-card h3{
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.package-card p{
+    color:#7c4dff;
+    font-weight:bold;
+}
+
+.package-card:hover{
+    transform:translateY(-3px);
+}
+
+.package-card.active{
+    border:2px solid #7c4dff;
+    background:#f5f0ff;
+}
+    /* ===== PAYMENT BUTTON ===== */
+
+.payment{
+    width:92%;
+    max-width:420px;
+    margin:25px auto 40px;
+}
+
+#pay-btn{
+    width:100%;
+    height:54px;
+    background:#7c4dff;
+    color:#fff;
+    border:none;
+    border-radius:14px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 8px 20px rgba(124,77,255,.25);
+}
+
+#pay-btn:hover{
+    background:#6d3cff;
+}
+
+#pay-btn:active{
+    transform:scale(.98);
+}
+    
