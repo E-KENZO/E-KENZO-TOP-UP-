@@ -1,148 +1,105 @@
 <!DOCTYPE html>
 <html lang="km">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Free Fire - E-KENZO TOP UP</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+<header class="header">
 
-<a href="index.html" class="back-btn">⬅️ ត្រឡប់</a>
+    <button class="menu-btn" onclick="history.back()">
 
-<header>
-    <h1>⚡ E-KENZO TOP UP</h1>
-</header>
+        <img src="assets/icons/back.png" alt="Back">
 
-<div class="container">
+    </button>
 
-    <div class="player-card">
+    <div class="logo">
 
-        <h2>🎮 Free Fire Top Up</h2>
+        <img src="assets/games/freefire.jpg" alt="Free Fire">
 
-        <p>សូមបញ្ចូលលេខសម្គាល់អ្នកលេង</p>
+        <div class="logo-text">
 
-        <input
-            type="text"
-            id="player-id"
-            placeholder="Player ID">
+            <h1>Free Fire</h1>
 
-        <button id="check-btn" onclick="checkUID()">
-            🔍 ពិនិត្យគណនី
-        </button>
+            <p>បញ្ចូលពេជ្រ</p>
 
-        <p id="player-name"></p>
+        </div>
 
     </div>
 
-    <h2>💎 ជ្រើសរើសកញ្ចប់</h2>
+</header>
+    <section class="player-box">
+
+    <h2>បញ្ចូលលេខសម្គាល់អ្នកលេង</h2>
+
+    <input
+        type="text"
+        id="player-id"
+        placeholder="Player ID">
+
+    <button id="check-btn">
+
+        ពិនិត្យគណនី
+
+    </button>
+
+    <p id="player-name"></p>
+
+    </section>
+    <section class="packages">
+
+    <h2>ជ្រើសរើសកញ្ចប់</h2>
 
     <div class="package-grid">
-    <div class="package-card">
-    <img src="assets/packages/freefire/diamond.png" alt="25 Diamond">
-    <h3>25 Diamond</h3>
-    <p>$0.25</p>
-</div>
 
-<div class="package-card">
-    <img src="assets/packages/freefire/diamond.png" alt="50 Diamond">
-    <h3>50 Diamond</h3>
-    <p>$0.45</p>
-</div>
+        <div class="package-card">
+            <img src="assets/icons/diamond.png" alt="25 Diamond">
+            <h3>25 Diamonds</h3>
+            <p>$0.25</p>
+        </div>
 
-<div class="package-card">
-    <img src="assets/packages/freefire/diamond.png" alt="70 Diamond">
-    <h3>70 Diamond</h3>
-    <p>$0.65</p>
-</div>
+        <div class="package-card">
+            <img src="assets/icons/diamond.png" alt="50 Diamond">
+            <h3>50 Diamonds</h3>
+            <p>$0.45</p>
+        </div>
 
-<div class="package-card">
-    <img src="assets/packages/freefire/diamond.png" alt="100 Diamond">
-    <h3>100 Diamond</h3>
-    <p>$0.90</p>
-</div>
+        <div class="package-card">
+            <img src="assets/icons/diamond.png" alt="100 Diamond">
+            <h3>100 Diamonds</h3>
+            <p>$0.90</p>
+        </div>
 
-<div class="package-card">
-    <img src="assets/packages/freefire/diamond.png" alt="210 Diamond">
-    <h3>210 Diamond</h3>
-    <p>$1.80</p>
-</div>
+        <div class="package-card">
+            <img src="assets/icons/diamond.png" alt="210 Diamond">
+            <h3>210 Diamonds</h3>
+            <p>$1.80</p>
+        </div>
 
-<div class="package-card">
-    <img src="assets/packages/freefire/diamond.png" alt="530 Diamond">
-    <h3>530 Diamond</h3>
-    <p>$4.50</p>
-</div>
-
-<div class="package-card">
-    <img src="assets/packages/freefire/diamond.png" alt="1080 Diamond">
-    <h3>1080 Diamond</h3>
-    <p>$8.80</p>
     </div>
 
-<div class="pay-box">
-    <button id="pay-btn" onclick="goToPayment()">
-        💳 Pay Now
+    </section>
+    <section class="payment">
+
+    <button id="pay-btn">
+
+        បន្តទៅការទូទាត់
+
     </button>
-</div>
 
-</div>
+</section>
 
-<script>
-
-const cards = document.querySelectorAll(".package-card");
-
-cards.forEach(card => {
-    card.onclick = function(){
-
-        cards.forEach(c => c.classList.remove("active"));
-
-        this.classList.add("active");
-
-    };
-});
-
-function checkUID(){
-
-    const id = document.getElementById("player-id").value.trim();
-
-    if(id==""){
-        alert("សូមបញ្ចូល Player ID");
-        return;
-    }
-
-    document.getElementById("player-name").innerHTML =
-    "✅ Player ID : " + id;
-}
-
-function goToPayment(){
-
-    const id = document.getElementById("player-id").value.trim();
-
-    if(id==""){
-        alert("សូមបញ្ចូល Player ID");
-        return;
-    }
-
-    const active = document.querySelector(".package-card.active");
-
-    if(!active){
-        alert("សូមជ្រើសរើសកញ្ចប់ជាមុន");
-        return;
-    }
-
-    const packageName = active.querySelector("h3").innerText;
-
-    localStorage.setItem("playerId", id);
-    localStorage.setItem("package", packageName);
-
-    window.location.href = "payment.html";
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
-    </html>
     
+</html>
