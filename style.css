@@ -364,24 +364,31 @@ input{
     /* ===== PAYMENT BUTTON ===== */
 
 .payment{
-    width:92%;
-    max-width:420px;
-    margin:25px auto 40px;
-}
-
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    background:#ffffff;
+    padding:15px;
+    box-shadow:0 -5px 20px rgba(0,0,0,.12);
+    z-index:999;
+    }
 #pay-btn{
     width:100%;
-    height:54px;
-    background:#7c4dff;
+    max-width:420px;
+    height:55px;
+    margin:0 auto;
+    display:block;
+    background:#bdbdbd;
     color:#fff;
     border:none;
     border-radius:14px;
     font-size:17px;
     font-weight:600;
     cursor:pointer;
-    transition:.25s;
-    box-shadow:0 8px 20px rgba(124,77,255,.25);
+    transition:.3s;
 }
+
 
 #pay-btn:hover{
     background:#6d3cff;
