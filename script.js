@@ -86,8 +86,10 @@ if (packageCards.length > 0) {
             card.classList.add("active");
 
             if (payBtn) {
-                payBtn.disabled = false;
-                payBtn.innerText = "បន្តទៅការទូទាត់";
+               payBtn.disabled = false;
+payBtn.style.background = "#7c4dff";
+payBtn.style.opacity = "1";
+payBtn.innerText = "បន្តទៅការទូទាត់";
             }
 
         });
