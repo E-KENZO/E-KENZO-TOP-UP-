@@ -130,3 +130,43 @@ if (payBtn) {
     });
 
 }
+// ===== AUTO CHECK PLAYER ID =====
+
+const playerInput = document.getElementById("player-id");
+const loading = document.getElementById("loading");
+const playerInfo = document.getElementById("player-info");
+const playerName = document.getElementById("player-name");
+const playerIdShow = document.getElementById("player-id-show");
+
+let checkTimer;
+
+if (playerInput) {
+
+    playerInput.addEventListener("input", function () {
+
+        clearTimeout(checkTimer);
+
+        playerInfo.style.display = "none";
+
+        if (this.value.trim().length < 5) {
+            loading.style.display = "none";
+            return;
+        }
+
+        loading.style.display = "flex";
+
+        checkTimer = setTimeout(() => {
+
+            loading.style.display = "none";
+
+            // បណ្តោះអាសន្ន (មុនភ្ជាប់ API)
+            playerName.textContent = "រកឃើញគណនី";
+            playerIdShow.textContent = this.value;
+
+            playerInfo.style.display = "flex";
+
+        }, 1000);
+
+    });
+
+    }
