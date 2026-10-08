@@ -502,3 +502,32 @@ select {
     border: 2px solid #ffd700;
     transition: all 0.2s ease;
                              }
+/* ===== PACKAGE SELECTED ===== */
+
+.package-card{
+    position:relative;
+}
+
+.package-card.active{
+    background:#f3ebff;
+    border:2px solid #7c4dff;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(124,77,255,.25);
+}
+
+.package-card.active::after{
+    content:"✓";
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:#7c4dff;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    font-weight:bold;
+    }
