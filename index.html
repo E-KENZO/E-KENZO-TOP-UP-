@@ -45,11 +45,11 @@
 
 <div class="dots">
 
-<span class="dot active"></span>
+    <span class="dot active" onclick="showBanner(0)"></span>
 
-<span class="dot"></span>
+    <span class="dot" onclick="showBanner(1)"></span>
 
-<span class="dot"></span>
+    <span class="dot" onclick="showBanner(2)"></span>
 
 </div>
 
@@ -94,32 +94,48 @@
 <script>
 
 const banners = [
-"assets/banners/banner1.png",
-"assets/banners/banner2.png",
-"assets/banners/banner3.png"
+const banners = [
+    "assets/banners/banner1.png",
+    "assets/banners/banner2.png",
+    "assets/banners/banner3.png"
 ];
 
 let index = 0;
 
 const banner = document.getElementById("banner");
-
 const dots = document.querySelectorAll(".dot");
 
-setInterval(()=>{
+function showBanner(i){
 
-index++;
+    index = i;
 
-if(index>=banners.length){
+    banner.style.opacity = "0";
 
-index=0;
+    setTimeout(() => {
+
+        banner.src = banners[index];
+
+        dots.forEach(dot => dot.classList.remove("active"));
+
+        dots[index].classList.add("active");
+
+        banner.style.opacity = "1";
+
+    },200);
 
 }
 
-banner.src=banners[index];
+setInterval(() => {
 
-dots.forEach(d=>d.classList.remove("active"));
+    index++;
 
-dots[index].classList.add("active");
+    if(index >= banners.length){
+
+        index = 0;
+
+    }
+
+    showBanner(index);
 
 },3000);
 
