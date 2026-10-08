@@ -45,13 +45,27 @@
         id="player-id"
         placeholder="Player ID">
 
-    <button id="check-btn">
+    <div class="player-result">
 
-        ពិនិត្យគណនី
+    <div class="loading" id="loading" style="display:none;">
+        កំពុងពិនិត្យគណនី...
+    </div>
 
-    </button>
+    <div class="player-info" id="player-info" style="display:none;">
 
-    <p id="player-name"></p>
+        <img src="assets/icons/player.png" alt="Player">
+
+        <div>
+
+            <h3 id="player-name">Player Name</h3>
+
+            <p>ID: <span id="player-id-show"></span></p>
+
+        </div>
+
+    </div>
+
+    </div>
 
     </section>
     <section class="packages">
