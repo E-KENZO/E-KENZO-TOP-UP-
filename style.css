@@ -467,4 +467,21 @@ input{
         opacity:1;
     }
 
+/* Disable text selection */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 
+/* Keep form fields usable */
+input,
+textarea,
+select {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    }
+    
