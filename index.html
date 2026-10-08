@@ -4,8 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>E-KENZO TOP UP</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -13,99 +18,113 @@
 <header class="header">
 
 <div class="logo">
-🎮 E-KENZO TOP UP
+
+<img src="assets/icons/logo.png" alt="E-KENZO">
+
+<div>
+
+<h1>E-KENZO TOP UP</h1>
+
+<p>បញ្ចូលពេជ្រហ្គេម • រហ័ស • សុវត្ថិភាព</p>
+
 </div>
 
-<nav>
-<a href="index.html">🏠 ទំព័រដើម</a>
-<a href="#games">🎮 ហ្គេម</a>
-<a href="contact.html">📞 ទំនាក់ទំនង</a>
-</nav>
+</div>
+
+<button class="menu-btn">
+
+<img src="assets/icons/menu.png" alt="Menu">
+
+</button>
 
 </header>
 
-<section class="banner-slider">
+<section class="banner">
 
 <img id="banner" src="assets/banners/banner1.png" alt="Banner">
 
-<div class="banner-text">
+<div class="dots">
 
-<h1>🎮 E-KENZO TOP UP</h1>
+<span class="dot active"></span>
 
-<p>
-បញ្ចូលហ្គេមរហ័ស • សុវត្ថិភាព • តម្លៃសមរម្យ
-</p>
+<span class="dot"></span>
 
-<a href="#games" class="banner-btn">
-ចាប់ផ្ដើម TOP UP
-</a>
+<span class="dot"></span>
 
 </div>
-</section>
-<h2 class="title" id="games">🎮 ជ្រើសរើសហ្គេម</h2>
 
-<div class="games">
+</section>
+
+<section class="games">
+
+<h2>ជ្រើសរើសហ្គេម</h2>
+<div class="game-grid">
 
 <a href="freefire.html" class="game-card">
-<img src="assets/games/freefire.jpg" alt="Free Fire">
-<h3>🔥 Free Fire</h3>
+    <img src="assets/games/freefire.png" alt="Free Fire">
+    <h3>Free Fire</h3>
 </a>
 
-<a href="ml.html" class="game-card">
-<img src="assets/games/mobilelegends.jpg" alt="Mobile Legends">
-<h3>⚔️ Mobile Legends</h3>
+<a href="mobilelegends.html" class="game-card">
+    <img src="assets/games/mobilelegends.png" alt="Mobile Legends">
+    <h3>Mobile Legends</h3>
 </a>
 
 <a href="pubg.html" class="game-card">
-<img src="assets/games/pubg.jpeg" alt="PUBG Mobile">
-<h3>🎯 PUBG Mobile</h3>
+    <img src="assets/games/pubg.png" alt="PUBG Mobile">
+    <h3>PUBG Mobile</h3>
 </a>
 
 <a href="hok.html" class="game-card">
-<img src="assets/games/hok.jpeg" alt="Honor of Kings">
-<h3>👑 Honor of Kings</h3>
+    <img src="assets/games/hok.png" alt="Honor of Kings">
+    <h3>Honor of Kings</h3>
 </a>
 
-</div>
-
-<section class="welcome-box">
-
-<h2>👋 សូមស្វាគមន៍មកកាន់ E-KENZO TOP UP</h2>
-
-<p>
-សូមជ្រើសរើសហ្គេមខាងលើ ដើម្បីចាប់ផ្ដើម Top Up។ យើងផ្តល់ជូនសេវាកម្មងាយស្រួល និងរហ័ស។
-</p>
-
+    </div>
     </section>
 
 <footer class="footer">
 
-<h2>🎮 E-KENZO TOP UP</h2>
+<p>© 2026 E-KENZO TOP UP</p>
 
-<p>
-សូមអរគុណដែលបានជ្រើសរើសសេវាកម្មរបស់ E-KENZO TOP UP។
-យើងខិតខំផ្តល់សេវាកម្មដែលមានគុណភាព រហ័ស និងសុវត្ថិភាព។
-</p>
-
-<div class="footer-links">
-
-<a href="https://t.me/YourTelegram">
-📩 Telegram
-</a>
-
-<a href="https://facebook.com/YourFacebook">
-📘 Facebook
-</a>
-
-</div>
-
-<p class="copyright">
-© 2026 E-KENZO TOP UP. All Rights Reserved.
-</p>
+<p>រក្សាសិទ្ធិគ្រប់យ៉ាង</p>
 
 </footer>
 
-<script src="script.js"></script>
+<script>
+
+const banners = [
+"assets/banners/banner1.png",
+"assets/banners/banner2.png",
+"assets/banners/banner3.png"
+];
+
+let index = 0;
+
+const banner = document.getElementById("banner");
+
+const dots = document.querySelectorAll(".dot");
+
+setInterval(()=>{
+
+index++;
+
+if(index>=banners.length){
+
+index=0;
+
+}
+
+banner.src=banners[index];
+
+dots.forEach(d=>d.classList.remove("active"));
+
+dots[index].classList.add("active");
+
+},3000);
+
+</script>
 
 </body>
+
     </html>
