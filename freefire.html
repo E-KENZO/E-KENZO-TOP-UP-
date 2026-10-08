@@ -98,7 +98,15 @@
 </section>
 
 <script src="script.js"></script>
+<script>
+function selectPackage(card) {
+    document.querySelectorAll(".package-card").forEach(function (item) {
+        item.classList.remove("selected");
+    });
 
+    card.classList.add("selected");
+}
+                </script>
 </body>
     
 </html>
