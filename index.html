@@ -2,165 +2,98 @@
 <html lang="km">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>E-KENZO TOP UP</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
+ <header class="header">
 
-<header class="header">
+    <div class="logo">
 
-<div class="logo">
+        <img src="assets/icons/logo.png" alt="E-KENZO">
 
-<img src="assets/icons/logo.png" alt="E-KENZO">
+        <div class="logo-text">
+            <h1>E-KENZO</h1>
+            <p>Game Top Up</p>
+        </div>
 
-<div>
+    </div>
 
-<h1>E-KENZO TOP UP</h1>
+    <button class="menu-btn" onclick="openMenu()">
 
-<p>បញ្ចូលពេជ្រហ្គេម • រហ័ស • សុវត្ថិភាព</p>
+        <img src="assets/icons/menu.png" alt="Menu">
 
-</div>
+    </button>
 
-</div>
-
-<button class="menu-btn" onclick="openMenu()">
-
-<img src="assets/icons/menu.png" alt="Menu">
-
-</button>
  </header>
-<div id="side-menu" class="side-menu">
+ <div id="side-menu" class="side-menu">
 
-<a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">
-✕
-</a>
+    <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">✕</a>
 
-<a href="index.html">ទំព័រដើម</a>
+    <a href="index.html">🏠 ទំព័រដើម</a>
 
-<a href="freefire.html">Free Fire</a>
+    <a href="freefire.html">🔥 Free Fire</a>
 
-<a href="mobilelegends.html">Mobile Legends</a>
+    <a href="mobilelegends.html">⚔️ Mobile Legends</a>
 
-<a href="pubg.html">PUBG Mobile</a>
+    <a href="pubg.html">🎯 PUBG Mobile</a>
 
-<a href="hok.html">Honor of Kings</a>
+    <a href="hok.html">👑 Honor of Kings</a>
 
-<a href="#">Telegram</a>
+    <a href="#">💬 Telegram</a>
 
-<a href="#">ទំនាក់ទំនង</a>
+    <a href="#">📞 ទំនាក់ទំនង</a>
 
-    </div>    
+ </div>
+ <section class="banner">
 
-<section class="banner">
+    <img id="banner" src="assets/banners/banner1.png" alt="Banner">
 
-<img id="banner" src="assets/banners/banner1.png" alt="Banner">
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 
-<div class="dots">
+ </section>
+ <section class="games">
 
-    <span class="dot active" onclick="showBanner(0)"></span>
+    <h2>ជ្រើសរើសហ្គេម</h2>
 
-    <span class="dot" onclick="showBanner(1)"></span>
+    <div class="game-grid">
 
-    <span class="dot" onclick="showBanner(2)"></span>
+        <a href="freefire.html" class="game-card">
+            <img src="assets/games/freefire.jpg" alt="Free Fire">
+            <h3>Free Fire</h3>
+        </a>
 
-</div>
+        <a href="mobilelegends.html" class="game-card">
+            <img src="assets/games/mobilelegends.jpg" alt="Mobile Legends">
+            <h3>Mobile Legends</h3>
+        </a>
 
-</section>
+        <a href="pubg.html" class="game-card">
+            <img src="assets/games/pubg.jpeg" alt="PUBG Mobile">
+            <h3>PUBG Mobile</h3>
+        </a>
 
-<section class="games">
+        <a href="hok.html" class="game-card">
+            <img src="assets/games/hok.jpeg" alt="Honor of Kings">
+            <h3>Honor of Kings</h3>
+        </a>
 
-<h2>ជ្រើសរើសហ្គេម</h2>
-<div class="game-grid">
+    </div>
 
-<a href="freefire.html" class="game-card">
-    <img src="assets/games/freefire.jpg" alt="Free Fire">
-    <h3>Free Fire</h3>
-</a>
-
-<a href="mobilelegends.html" class="game-card">
-    <img src="assets/games/mobilelegends.jpg" alt="Mobile Legends">
-    <h3>Mobile Legends</h3>
-</a>
-
-<a href="pubg.html" class="game-card">
-    <img src="assets/games/pubg.jpeg" alt="PUBG Mobile">
-    <h3>PUBG Mobile</h3>
-</a>
-
-<a href="hok.html" class="game-card">
-    <img src="assets/games/hok.jpeg" alt="Honor of Kings">
-    <h3>Honor of Kings</h3>
-</a>
-
-</div>
-    </section>
-
-<footer class="footer">
-
-<p>© 2026 E-KENZO TOP UP</p>
-
-<p>រក្សាសិទ្ធិគ្រប់យ៉ាង</p>
-
-</footer>
-
-<script>
-
-const banners = [
-const banners = [
-    "assets/banners/banner1.png",
-    "assets/banners/banner2.png",
-    "assets/banners/banner3.png"
-];
-
-let index = 0;
-
-const banner = document.getElementById("banner");
-const dots = document.querySelectorAll(".dot");
-
-function showBanner(i){
-
-    index = i;
-
-    banner.style.opacity = "0";
-
-    setTimeout(() => {
-
-        banner.src = banners[index];
-
-        dots.forEach(dot => dot.classList.remove("active"));
-
-        dots[index].classList.add("active");
-
-        banner.style.opacity = "1";
-
-    },200);
-
-}
-
-setInterval(() => {
-
-    index++;
-
-    if(index >= banners.length){
-
-        index = 0;
-
-    }
-
-    showBanner(index);
-
-},3000);
-
-</script>
+ </section>
+ <script src="script.js"></script>
 
 </body>
-
-    </html>
+         </html>
