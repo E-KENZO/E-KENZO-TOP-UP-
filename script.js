@@ -97,3 +97,21 @@ payBtn.innerText = "បន្តទៅការទូទាត់";
     });
 
                          }
+// ===== PAYMENT INFO =====
+
+const selectedPackage = document.getElementById("selected-package");
+const selectedPrice = document.getElementById("selected-price");
+
+packageCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const packageName = card.querySelector("h3").innerText;
+        const packagePrice = card.querySelector("p").innerText;
+
+        selectedPackage.innerText = packageName;
+        selectedPrice.innerText = packagePrice;
+
+    });
+
+});
