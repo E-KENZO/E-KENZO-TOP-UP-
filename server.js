@@ -85,7 +85,39 @@ app.post("/create-order", upload.single("receipt"), (req, res) => {
     });
 
 });
+app.post("/check-player", async (req, res) => {
 
+    try {
+
+        const { game, playerId, zoneId } = req.body;
+
+        const response = await axios.get(
+            "https://khmer-topup.com/api/v1/check",
+            {
+                headers: {
+                    "Authorization": `Bearer ${API_KEY}`
+                },
+                params: {
+                    game,
+                    playerId,
+                    zoneId
+                }
+            }
+        );
+
+        res.json(response.data);
+
+    } catch (error) {
+
+        res.status(400).json({
+            success: false,
+            message: "Player not found",
+            error: error.response?.data || error.message
+        });
+
+    }
+
+});
 const PORT = 3000;
 
 app.listen(PORT, () => {
