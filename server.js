@@ -86,24 +86,33 @@ app.post("/create-order", upload.single("receipt"), (req, res) => {
 
 });
 app.post("/check-player", async (req, res) => {
-
     try {
-
-        const { game, playerId, zoneId } = req.body;
+        const { slug, player_id, server_id } = req.body;
 
         const response = await axios.get(
             "https://khmer-topup.com/api/v1/check",
             {
                 headers: {
-                    "Authorization": `Bearer ${API_KEY}`
+                    Authorization: `Bearer ${API_KEY}`
                 },
                 params: {
-                    game,
-                    playerId,
-                    zoneId
+                    slug,
+                    player_id,
+                    server_id
                 }
             }
         );
+
+        res.json(response.data);
+
+    } catch (error) {
+        res.status(400).json(
+            error.response?.data || {
+                result: "invalid"
+            }
+        );
+    }
+});
 
         res.json(response.data);
 
