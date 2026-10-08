@@ -70,3 +70,28 @@ document.addEventListener("click", function (e) {
     }
 
 });
+// ===== SELECT PACKAGE =====
+
+const packageCards = document.querySelectorAll(".package-card");
+const payBtn = document.getElementById("pay-btn");
+
+if (packageCards.length > 0) {
+
+    packageCards.forEach(card => {
+
+        card.addEventListener("click", () => {
+
+            packageCards.forEach(c => c.classList.remove("active"));
+
+            card.classList.add("active");
+
+            if (payBtn) {
+                payBtn.disabled = false;
+                payBtn.innerText = "បន្តទៅការទូទាត់";
+            }
+
+        });
+
+    });
+
+                         }
