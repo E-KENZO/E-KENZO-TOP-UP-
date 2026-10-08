@@ -101,12 +101,16 @@
 <script>
 function selectPackage(card) {
     document.querySelectorAll(".package-card").forEach(function (item) {
-        item.classList.remove("selected");
+        item.style.transform = "";
+        item.style.boxShadow = "";
+        item.style.border = "";
     });
 
-    card.classList.add("selected");
+    card.style.transform = "scale(1.03)";
+    card.style.boxShadow = "0 0 20px rgba(255, 215, 0, 0.95)";
+    card.style.border = "2px solid #ffd700";
 }
-                </script>
+        </script>
 </body>
     
 </html>
