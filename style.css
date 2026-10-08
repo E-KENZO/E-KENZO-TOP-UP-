@@ -714,7 +714,14 @@ opacity:1;
     border:2px solid transparent;
     transition:all .25s ease;
 }
-
+.game-card img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:20px;
+    display:block;
+    margin:0 auto 12px;
+                               }
 .game-card img{
     width:95px;
     height:95px;
@@ -736,3 +743,19 @@ opacity:1;
 .game-card:active{
     transform:scale(.96);
     }
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button,
+.game-card,
+.package-card{
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+}
+
+button:focus,
+a:focus{
+    outline:none;
+}
