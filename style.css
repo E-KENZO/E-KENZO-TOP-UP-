@@ -485,3 +485,13 @@ select {
     -ms-user-select: text;
     }
     
+.site-footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    color: #ffffff;
+    font-size: 14px;
+    background: #111111;
+    box-sizing: border-box;
+    }
