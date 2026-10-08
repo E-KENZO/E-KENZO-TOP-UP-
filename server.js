@@ -1,5 +1,11 @@
 require("dotenv").config();
+const API_KEY = process.env.API_KEY;
 
+if (!API_KEY) {
+    console.error("❌ API_KEY not found");
+} else {
+    console.log("✅ API_KEY loaded");
+}
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
