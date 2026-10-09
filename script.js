@@ -155,7 +155,7 @@ if (playerInput && loading && playerInfo && playerName && playerIdShow) {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            slug: "free-fire",
+                            slug: "freefire-sgmy"
                             player_id: playerId
                         })
                     }
