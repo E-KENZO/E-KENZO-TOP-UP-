@@ -114,19 +114,7 @@ app.post("/check-player", async (req, res) => {
     }
 });
 
-        res.json(response.data);
-
-    } catch (error) {
-
-        res.status(400).json({
-            success: false,
-            message: "Player not found",
-            error: error.response?.data || error.message
-        });
-
-    }
-
-});
+        
 const PORT = 3000;
 
 app.listen(PORT, () => {
