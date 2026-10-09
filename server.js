@@ -90,21 +90,22 @@ app.post("/check-player", async (req, res) => {
         const { slug, player_id, server_id } = req.body;
 
         const response = await axios.get(
-            console.log("KhmerTopUp Response:", response.data);
-            "https://khmer-topup.com/api/v1/check",
-            {
-                headers: {
-                    Authorization: `Bearer ${API_KEY}`
-                },
-                params: {
-                    slug,
-                    player_id,
-                    server_id
-                }
-            }
-        );
+    "https://khmer-topup.com/api/v1/check",
+    {
+        headers: {
+            Authorization: `Bearer ${API_KEY}`
+        },
+        params: {
+            slug,
+            player_id,
+            server_id
+        }
+    }
+);
 
-        res.json(response.data);
+console.log("KhmerTopUp Response:", response.data);
+
+res.json(response.data);
 
     } catch (error) {
         res.status(400).json(
