@@ -130,7 +130,8 @@ if (payBtn) {
     });
 
 }
-// ===== AUTO CHECK PLAYER ID =====
+
+ // ===== AUTO CHECK PLAYER ID =====
 
 const playerInput = document.getElementById("player-id");
 const loading = document.getElementById("loading");
@@ -139,34 +140,74 @@ const playerName = document.getElementById("player-name");
 const playerIdShow = document.getElementById("player-id-show");
 
 let checkTimer;
+let requestNumber = 0;
 
-if (playerInput) {
-
+if (playerInput && loading && playerInfo && playerName && playerIdShow) {
     playerInput.addEventListener("input", function () {
-
         clearTimeout(checkTimer);
+        const id = this.value.trim();
+        const currentRequest = ++requestNumber;
 
         playerInfo.style.display = "none";
 
-        if (this.value.trim().length < 5) {
+        if (id.length < 5) {
             loading.style.display = "none";
             return;
         }
 
-        loading.style.display = "flex";
+        checkTimer = setTimeout(async () => {
+            loading.style.display = "flex";
 
-        checkTimer = setTimeout(() => {
+            try {
+                const response = await fetch(
+                    "https://e-kenzo-api.onrender.com/check-player",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            slug: "free-fire",
+                            player_id: id
+                        })
+                    }
+                );
 
-            loading.style.display = "none";
+                const data = await response.json();
 
-            // បណ្តោះអាសន្ន (មុនភ្ជាប់ API)
-            playerName.textContent = "រកឃើញគណនី";
-            playerIdShow.textContent = this.value;
+                if (currentRequest !== requestNumber) return;
 
-            playerInfo.style.display = "flex";
+                if (!response.ok || data.result === "invalid") {
+                    throw new Error("មិនអាចរកគណនីនេះបានទេ");
+                }
 
-        }, 1000);
+                const name =
+                    data.name ||
+                    data.player_name ||
+                    data.data?.name;
 
+                if (!name) {
+                    throw new Error("API មិនបានផ្ញើឈ្មោះអ្នកលេងមកទេ");
+                }
+
+                playerName.textContent = name;
+                playerIdShow.textContent = id;
+                playerInfo.style.display = "flex";
+
+            } catch (error) {
+                if (currentRequest === requestNumber) {
+                    playerInfo.style.display = "none";
+                    playerName.textContent = error.message;
+                }
+                console.error("Player check failed:", error);
+            } finally {
+                if (currentRequest === requestNumber) {
+                    loading.style.display = "none";
+                }
+            }
+        }, 700);
     });
+}
+
 
     }
