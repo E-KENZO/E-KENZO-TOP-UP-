@@ -90,6 +90,7 @@ app.post("/check-player", async (req, res) => {
         const { slug, player_id, server_id } = req.body;
 
         const response = await axios.get(
+            console.log("KhmerTopUp Response:", response.data);
             "https://khmer-topup.com/api/v1/check",
             {
                 headers: {
