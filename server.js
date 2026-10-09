@@ -107,16 +107,14 @@ console.log("KhmerTopUp Response:", response.data);
 
 res.json(response.data);
 
-    } catch (error) {
-        res.status(400).json(
-            error.response?.data || {
-                result: "invalid"
-            }
-        );
-    }
-});
+    catch (error) {
+    console.log("KhmerTopUp Error:", error.response?.data || error.message);
 
-        
+    res.status(400).json({
+        success: false,
+        error: error.response?.data || error.message
+    });
+                                 }
 const PORT = 3000;
 
 app.listen(PORT, () => {
