@@ -182,9 +182,11 @@ if (playerInput && loading && playerInfo && playerName && playerIdShow) {
                 }
 
                 const name =
-                    data.name ||
-                    data.player_name ||
-                    data.data?.name;
+    data.nickname ||
+    data.name ||
+    data.player_name ||
+    data.data?.nickname ||
+    data.data?.name;
 
                 if (!name) {
                     throw new Error("API មិនបានផ្ញើឈ្មោះអ្នកលេងមកទេ");
