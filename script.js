@@ -80,7 +80,7 @@ packageCards.forEach(card => {
     card.addEventListener("click", () => {
 
         packageCards.forEach(c => c.classList.remove("active"));
-        e.preventDefault();
+        
         card.classList.add("active");
 
         if (selectedPackage) {
