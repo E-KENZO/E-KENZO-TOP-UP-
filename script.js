@@ -220,3 +220,18 @@ if (packageGrid) {
     });
 
                              }
+// ===== PACKAGE CLICK =====
+
+packageGrid.querySelectorAll(".package-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        packageGrid.querySelectorAll(".package-card").forEach(c => {
+            c.classList.remove("active");
+        });
+
+        card.classList.add("active");
+
+    });
+
+});
