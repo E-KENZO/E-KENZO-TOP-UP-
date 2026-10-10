@@ -194,14 +194,17 @@ img{
 .package-overlay.active{
     display:flex;
 }
-
-.package-panel{
+.package-overlay.active .package-panel{
+    transform: translateY(0);
+}
     width:100%;
     max-height:85vh;
     background:#1b2235;
     border-radius:25px 25px 0 0;
     padding:20px;
     overflow-y:auto;
+   transform: translateY(100%);
+transition: transform .35s ease;
 }
 
 .panel-header{
