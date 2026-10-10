@@ -567,3 +567,65 @@ select {
         transform:rotate(360deg);
     }
         }
+/* ================= PACKAGE PANEL ================= */
+
+.package-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    justify-content:center;
+    align-items:flex-end;
+    z-index:9999;
+    backdrop-filter:blur(4px);
+}
+
+.package-overlay.active{
+    display:flex;
+}
+
+.package-panel{
+    width:100%;
+    max-height:85vh;
+    background:#141b2d;
+    border-radius:25px 25px 0 0;
+    padding:20px;
+    overflow-y:auto;
+    transform:translateY(100%);
+    transition:.35s ease;
+}
+
+.package-overlay.active .package-panel{
+    transform:translateY(0);
+}
+
+.panel-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.panel-header h2{
+    color:#fff;
+    font-size:22px;
+}
+
+#closePanel{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#ff3b30;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.package-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+/* ============================================== */
