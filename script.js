@@ -68,54 +68,6 @@ document.addEventListener("click", function (e) {
 
 });
 
-// ===== PACKAGE =====
-const packageCards = document.querySelectorAll(".package-card");
-const payBtn = document.getElementById("pay-btn");
-
-const selectedPackage = document.getElementById("selected-package");
-const selectedPrice = document.getElementById("selected-price");
-
-packageCards.forEach(card => {
-
-    card.addEventListener("click", () => {
-
-        packageCards.forEach(c => c.classList.remove("active"));
-        
-        card.classList.add("active");
-
-        if (selectedPackage) {
-            selectedPackage.textContent =
-                card.querySelector("h3")?.innerText || "";
-        }
-
-        if (selectedPrice) {
-            selectedPrice.textContent =
-                card.querySelector("p")?.innerText || "";
-        }
-
-        if (payBtn) {
-            payBtn.disabled = false;
-            payBtn.style.opacity = "1";
-            payBtn.innerText = "បន្តទៅការទូទាត់";
-        }
-
-    });
-
-});
-
-if (payBtn) {
-
-    payBtn.addEventListener("click", () => {
-
-        if (!payBtn.disabled) {
-
-            location.href = "payment.html";
-
-        }
-
-    });
-
-                          }
 // ===== AUTO CHECK PLAYER ID =====
 
 const playerInput = document.getElementById("player-id");
