@@ -16,23 +16,7 @@ function closeMenu() {
     }
 }
 
-document.addEventListener("click", function (e) {
-
-    const menu = document.getElementById("side-menu");
-    const menuBtn = document.querySelector(".menu-btn");
-
-    if (
-        menu &&
-        menuBtn &&
-        menu.classList.contains("active") &&
-        !menu.contains(e.target) &&
-        !menuBtn.contains(e.target)
-    ) {
-        closeMenu();
-    }
-
-});
-// =========================
+docu// =========================
 // BANNER
 // =========================
 
@@ -51,15 +35,41 @@ function showBanner(index) {
 
     if (!banner) return;
 
-    banner.src = banners[index];
+    banner.style.opacity = "0";
 
-    dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-    });
+    setTimeout(() => {
+
+        banner.src = banners[index];
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+
+        banner.style.opacity = "1";
+
+    }, 250);
 
 }
 
+function nextBanner() {
 
+    currentBanner++;
+
+    if (currentBanner >= banners.length) {
+        currentBanner = 0;
+    }
+
+    showBanner(currentBanner);
+
+}
+
+if (banner) {
+
+    showBanner(0);
+
+    setInterval(nextBanner, 3000);
+
+}
 
 dots.forEach((dot, index) => {
 
@@ -70,26 +80,24 @@ dots.forEach((dot, index) => {
         showBanner(index);
 
     });
-function nextBanner() {
 
-    banner.style.opacity = "0";
+});ment.addEventListener("click", function (e) {
 
-    setTimeout(() => {
+    const menu = document.getElementById("side-menu");
+    const menuBtn = document.querySelector(".menu-btn");
 
-        currentBanner++;
+    if (
+        menu &&
+        menuBtn &&
+        menu.classList.contains("active") &&
+        !menu.contains(e.target) &&
+        !menuBtn.contains(e.target)
+    ) {
+        closeMenu();
+    }
 
-        if (currentBanner >= banners.length) {
-            currentBanner = 0;
-        }
-
-        showBanner(currentBanner);
-
-        banner.style.opacity = "1";
-
-    }, 300);
-
-}
 });
+
 // =========================
 // IRE PACKAGE PANEL
 // =========================
