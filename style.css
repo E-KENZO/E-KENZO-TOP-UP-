@@ -1,1 +1,313 @@
+/* =========================
+   RESET
+========================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:#fff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    height:70px;
+    background:#16213e;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:45px;
+    height:45px;
+    border-radius:10px;
+}
+
+.logo-text h1{
+    font-size:20px;
+}
+
+.logo-text p{
+    font-size:12px;
+    color:#bdbdbd;
+}
+
+.menu-btn{
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.menu-btn img{
+    width:28px;
+}
+/* =========================
+   SIDE MENU
+========================= */
+
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-280px;
+    width:280px;
+    height:100%;
+    background:#16213e;
+    transition:.3s;
+    z-index:9999;
+    padding:20px;
+}
+
+.side-menu.active{
+    left:0;
+}
+
+.close-btn{
+    display:block;
+    text-align:right;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.side-menu a{
+    display:block;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+/* =========================
+   BANNER
+========================= */
+
+.banner{
+    width:95%;
+    margin:15px auto;
+}
+
+.banner img{
+    width:100%;
+    border-radius:15px;
+}
+
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:10px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#777;
+}
+
+.dot.active{
+    background:#ffd700;
+}
+
+/* =========================
+   GAME GRID
+========================= */
+
+.games{
+    width:95%;
+    margin:20px auto;
+}
+
+.games h2{
+    margin-bottom:15px;
+}
+
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.game-card{
+    background:#1b2235;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    transition:.25s;
+}
+
+.game-card:hover{
+    transform:translateY(-4px);
+}
+
+.game-card img{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:12px;
+}
+
+.game-card h3{
+    margin-top:10px;
+    font-size:15px;
+  }
+/* =========================
+   PACKAGE PANEL
+========================= */
+
+.package-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    display:none;
+    justify-content:center;
+    align-items:flex-end;
+    z-index:99999;
+}
+
+.package-overlay.active{
+    display:flex;
+}
+
+.package-panel{
+    width:100%;
+    max-height:85vh;
+    background:#1b2235;
+    border-radius:25px 25px 0 0;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.panel-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.panel-header h2{
+    color:#fff;
+    font-size:22px;
+}
+
+#closePanel{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#ff3b30;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.package-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.package-card{
+    background:#28344f;
+    border-radius:12px;
+    padding:10px;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.package-card img{
+    width:55px;
+    height:55px;
+    margin:auto;
+}
+
+.package-card h3{
+    margin-top:8px;
+    font-size:13px;
+    color:#fff;
+}
+
+.package-card p{
+    color:#ffd700;
+    margin-top:5px;
+    font-weight:bold;
+}
+
+.package-card.active{
+    border:2px solid #ffd700;
+    box-shadow:0 0 12px #ffd700;
+  }
+/* =========================
+   TELEGRAM
+========================= */
+
+.telegram-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 20px rgba(0,136,204,.5);
+    z-index:999;
+}
+
+.telegram-float img{
+    width:38px;
+    height:38px;
+}
+
+.online-dot{
+    position:absolute;
+    top:5px;
+    right:5px;
+    width:12px;
+    height:12px;
+    background:#00d26a;
+    border-radius:50%;
+    border:2px solid #fff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+    margin-top:40px;
+    background:#111827;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+}
