@@ -232,3 +232,33 @@ packageOverlay.onclick = (e) => {
     }
 
 };
+// ===== FREE FIRE PACKAGE LIST =====
+
+const packageGrid = document.getElementById("packageGrid");
+
+if (packageGrid) {
+
+    const freefirePackages = [
+
+        { name: "25 Diamonds", price: "$0.25", image: "assets/icons/diamond.png" },
+        { name: "50 Diamonds", price: "$0.45", image: "assets/icons/diamond.png" },
+        { name: "100 Diamonds", price: "$0.90", image: "assets/icons/diamond.png" },
+        { name: "210 Diamonds", price: "$1.80", image: "assets/icons/diamond.png" }
+
+    ];
+
+    packageGrid.innerHTML = "";
+
+    freefirePackages.forEach(item => {
+
+        packageGrid.innerHTML += `
+            <div class="package-card" onclick="selectPackage(this)">
+                <img src="${item.image}" alt="${item.name}">
+                <h3>${item.name}</h3>
+                <p>${item.price}</p>
+            </div>
+        `;
+
+    });
+
+}
