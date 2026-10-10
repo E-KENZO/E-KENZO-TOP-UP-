@@ -59,25 +59,7 @@ function showBanner(index) {
 
 }
 
-function nextBanner() {
 
-    currentBanner++;
-
-    if (currentBanner >= banners.length) {
-        currentBanner = 0;
-    }
-
-    showBanner(currentBanner);
-
-}
-
-if (banner) {
-
-    showBanner(0);
-
-    setInterval(nextBanner, 3000);
-
-}
 
 dots.forEach((dot, index) => {
 
@@ -88,10 +70,28 @@ dots.forEach((dot, index) => {
         showBanner(index);
 
     });
+function nextBanner() {
 
+    banner.style.opacity = "0";
+
+    setTimeout(() => {
+
+        currentBanner++;
+
+        if (currentBanner >= banners.length) {
+            currentBanner = 0;
+        }
+
+        showBanner(currentBanner);
+
+        banner.style.opacity = "1";
+
+    }, 300);
+
+}
 });
 // =========================
-// FREE FIRE PACKAGE PANEL
+// IRE PACKAGE PANEL
 // =========================
 
 const packageOverlay = document.getElementById("packageOverlay");
