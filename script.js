@@ -262,3 +262,39 @@ if (packageGrid) {
     });
 
 }
+// ===== FREE FIRE PACKAGE PANEL =====
+
+const packageGrid = document.getElementById("packageGrid");
+
+const freefirePackages = [
+    { name: "25 Diamonds", price: "$0.25", img: "assets/icons/diamond.png" },
+    { name: "50 Diamonds", price: "$0.45", img: "assets/icons/diamond.png" },
+    { name: "100 Diamonds", price: "$0.90", img: "assets/icons/diamond.png" },
+    { name: "210 Diamonds", price: "$1.80", img: "assets/icons/diamond.png" },
+
+    { name: "310 Diamonds", price: "$2.70", img: "assets/icons/diamond.png" },
+    { name: "520 Diamonds", price: "$4.50", img: "assets/icons/diamond.png" },
+    { name: "1060 Diamonds", price: "$8.90", img: "assets/icons/diamond.png" },
+    { name: "2180 Diamonds", price: "$17.90", img: "assets/icons/diamond.png" },
+
+    { name: "5600 Diamonds", price: "$44.90", img: "assets/icons/diamond.png" },
+    { name: "Weekly", price: "$1.89", img: "assets/icons/diamond.png" },
+    { name: "Monthly", price: "$7.99", img: "assets/icons/diamond.png" },
+    { name: "Level Up", price: "$3.99", img: "assets/icons/diamond.png" }
+];
+
+if (packageGrid) {
+
+    freefirePackages.forEach(item => {
+
+        packageGrid.innerHTML += `
+        <div class="package-card">
+            <img src="${item.img}">
+            <h3>${item.name}</h3>
+            <p>${item.price}</p>
+        </div>
+        `;
+
+    });
+
+                             }
