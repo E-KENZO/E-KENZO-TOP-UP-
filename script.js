@@ -80,7 +80,7 @@ packageCards.forEach(card => {
     card.addEventListener("click", () => {
 
         packageCards.forEach(c => c.classList.remove("active"));
-
+        e.preventDefault();
         card.classList.add("active");
 
         if (selectedPackage) {
@@ -201,7 +201,7 @@ const packageOverlay = document.getElementById("packageOverlay");
 const closePanel = document.getElementById("closePanel");
 
 // Card Free Fire
-const freeFireCard = document.querySelector(".freefire-card");
+const freeFireCard = document.getElementById("freefire-card");
 
 if (freeFireCard) {
 
