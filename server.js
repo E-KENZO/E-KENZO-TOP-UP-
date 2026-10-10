@@ -93,8 +93,8 @@ app.post("/check-player", async (req, res) => {
     "https://khmer-topup.com/api/v1/check",
     {
         headers: {
-            Authorization: `Bearer ${API_KEY}`
-        },
+    "X-API-Key": API_KEY
+            }
         params: {
             slug,
             player_id,
