@@ -195,3 +195,40 @@ if (playerInput && loading && playerInfo && playerName && playerIdShow) {
     });
 
                      }
+// ===== OPEN PACKAGE PANEL =====
+
+const packageOverlay = document.getElementById("packageOverlay");
+const closePanel = document.getElementById("closePanel");
+
+// Card Free Fire
+const freeFireCard = document.querySelector(".freefire-card");
+
+if (freeFireCard) {
+
+    freeFireCard.onclick = () => {
+
+        packageOverlay.classList.add("active");
+
+    };
+
+}
+
+if (closePanel) {
+
+    closePanel.onclick = () => {
+
+        packageOverlay.classList.remove("active");
+
+    };
+
+}
+
+packageOverlay.onclick = (e) => {
+
+    if (e.target === packageOverlay) {
+
+        packageOverlay.classList.remove("active");
+
+    }
+
+};
