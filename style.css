@@ -538,6 +538,32 @@ select {
     font-size:14px;
     font-weight:bold;
     }
+    .package-card{
+    background:#1b2235;
+    border:2px solid transparent;
+    border-radius:14px;
+    padding:12px;
+    text-align:center;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.package-card img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.package-card h3{
+    margin:8px 0 4px;
+    font-size:14px;
+    color:#fff;
+}
+
+.package-card p{
+    color:#ffd700;
+    font-weight:bold;
+}
 /* ===== LOADING SPINNER ===== */
 
 .loading{
@@ -626,6 +652,7 @@ select {
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:12px;
+    margin-top:15px;
 }
 
 /* ============================================== */
