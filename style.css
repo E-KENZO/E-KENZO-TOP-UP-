@@ -171,8 +171,11 @@ img{
     height:90px;
     margin:auto;
     border-radius:12px;
-}
-
+    object-fit:cover;
+    display:block;
+    background:transparent;
+    box-shadow:none;
+   }
 .game-card h3{
     margin-top:10px;
     font-size:15px;
