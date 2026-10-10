@@ -250,7 +250,7 @@ const freefirePackages = [
     { name: "5600 Diamonds", price: "$44.90", img: "assets/icons/diamond.png" },
     { name: "Weekly", price: "$1.89", img: "assets/icons/diamond.png" },
     { name: "Monthly", price: "$7.99", img: "assets/icons/diamond.png" },
-    { name: "Level Up", price: "$3.99", img: "assets/icons/diamond.png" }
+    { name: "Level Up", price: "$3.99", img: "assets/icons/diamond.png" },
 ];
 
 if (packageGrid) {
