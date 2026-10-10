@@ -11,7 +11,7 @@ function closeMenu() {
 const banners = [
     "assets/banners/banner1.png",
     "assets/banners/banner2.png",
-    "assets/banners/banner3.png"
+    "assets/banners/banner3.png",
 ];
 
 let currentBanner = 0;
@@ -155,7 +155,7 @@ if (playerInput && loading && playerInfo && playerName && playerIdShow) {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            slug: "freefire-sgmy"
+                            slug: "freefire-sgmy",
                             player_id: playerId
                         })
                     }
