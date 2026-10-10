@@ -97,9 +97,8 @@ dots.forEach((dot, index) => {
     }
 
 });
-
 // =========================
-// IRE PACKAGE PANEL
+// FREE FIRE PACKAGE PANEL
 // =========================
 
 const packageOverlay = document.getElementById("packageOverlay");
@@ -133,11 +132,11 @@ if (packageGrid) {
     freefirePackages.forEach(item => {
 
         packageGrid.innerHTML += `
-            <div class="package-card">
-                <img src="${item.img}" alt="">
-                <h3>${item.name}</h3>
-                <p>${item.price}</p>
-            </div>
+        <div class="package-card">
+            <img src="${item.img}" alt="">
+            <h3>${item.name}</h3>
+            <p>${item.price}</p>
+        </div>
         `;
 
     });
@@ -146,7 +145,7 @@ if (packageGrid) {
 
 if (freeFireCard) {
 
-    freeFireCard.addEventListener("click", function (e) {
+    freeFireCard.addEventListener("click", function(e){
 
         e.preventDefault();
 
@@ -158,7 +157,7 @@ if (freeFireCard) {
 
 if (closePanel) {
 
-    closePanel.addEventListener("click", function () {
+    closePanel.addEventListener("click", function(){
 
         packageOverlay.classList.remove("active");
 
@@ -168,9 +167,9 @@ if (closePanel) {
 
 if (packageOverlay) {
 
-    packageOverlay.addEventListener("click", function (e) {
+    packageOverlay.addEventListener("click", function(e){
 
-        if (e.target === packageOverlay) {
+        if(e.target === packageOverlay){
 
             packageOverlay.classList.remove("active");
 
@@ -178,8 +177,30 @@ if (packageOverlay) {
 
     });
 
+}
+
+document.addEventListener("click", function(e){
+
+    const card = e.target.closest(".package-card");
+
+    if(!card) return;
+
+    document.querySelectorAll(".package-card").forEach(c=>{
+        c.classList.remove("active");
+    });
+
+    card.classList.add("active");
+
+    const playerSection = document.getElementById("playerSection");
+
+    if(playerSection){
+
+        playerSection.style.display = "block";
+
     }
-        // =========================
+
+});
+// =========================
 // SELECT PACKAGE
 // =========================
 
