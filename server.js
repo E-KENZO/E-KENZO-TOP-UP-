@@ -94,7 +94,7 @@ app.post("/check-player", async (req, res) => {
     {
         headers: {
     "X-API-Key": API_KEY
-            }
+            },
         params: {
             slug,
             player_id,
