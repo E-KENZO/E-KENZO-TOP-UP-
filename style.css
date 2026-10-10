@@ -114,7 +114,8 @@ img{
     height:180px;
     object-fit:cover;
     border-radius:15px;
-    transition:opacity .5s ease;
+    opacity:1;
+    transition:opacity .25s ease;
 }
 .dots{
     display:flex;
