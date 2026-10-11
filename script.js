@@ -220,50 +220,7 @@ document.addEventListener("click",(e)=>{
     }
 
 });
-// ===================================
-// PART 5 : AUTO CHECK PLAYER ID
-// ===================================
 
-const playerInput = document.getElementById("player-id");
-const loading = document.getElementById("loading");
-const playerInfo = document.getElementById("player-info");
-const playerName = document.getElementById("player-name");
-const playerIdShow = document.getElementById("player-id-show");
-
-let checkTimer;
-
-if (playerInput) {
-
-                const data = await response.json();
-
-                if (loading) loading.style.display = "none";
-
-                if (!response.ok) throw new Error();
-
-                const nickname =
-                    data.nickname ||
-                    data.data?.nickname ||
-                    data.name ||
-                    "Unknown";
-
-                playerName.textContent = nickname;
-                playerIdShow.textContent = playerId;
-
-                playerInfo.style.display = "block";
-
-            } catch (err) {
-
-                if (loading) loading.style.display = "none";
-
-                if (playerInfo) playerInfo.style.display = "none";
-
-            }
-
-        }, 800);
-
-    });
-
-                    }
 // ===================================
 // PART 6 : CONTINUE BUTTON
 // ===================================
@@ -291,8 +248,110 @@ if (continueBtn) {
         // location.href = "payment.html";
 
     });
-
 }
+// =========================
+// AUTO CHECK PLAYER ID
+// =========================
+
+const playerInput = document.getElementById("player-id");
+const loading = document.getElementById("loading");
+const playerInfo = document.getElementById("player-info");
+const playerName = document.getElementById("player-name");
+const playerIdShow = document.getElementById("player-id-show");
+
+let checkTimer;
+
+if (playerInput) {
+
+    playerInput.addEventListener("input", function () {
+
+        clearTimeout(checkTimer);
+
+        const playerId = this.value.trim();
+
+        if (playerInfo) {
+            playerInfo.style.display = "none";
+        }
+
+        if (playerId.length < 5) {
+
+            if (loading) {
+                loading.style.display = "none";
+            }
+
+            return;
+
+        }
+
+        if (loading) {
+            loading.style.display = "flex";
+        }
+
+        checkTimer = setTimeout(async () => {
+
+            try {
+
+                const response = await fetch(
+                    "https://e-kenzo-api.onrender.com/check-player",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            slug: "freefire-sgmy",
+                            player_id: playerId
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                if (loading) {
+                    loading.style.display = "none";
+                }
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Check Failed");
+                }
+
+                const nickname =
+                    data.nickname ||
+                    data.data?.nickname ||
+                    data.name ||
+                    "Unknown";
+
+                if (playerName) {
+                    playerName.textContent = nickname;
+                }
+
+                if (playerIdShow) {
+                    playerIdShow.textContent = playerId;
+                }
+
+                if (playerInfo) {
+                    playerInfo.style.display = "flex";
+                }
+
+            } catch (err) {
+
+                console.log(err);
+
+                if (loading) {
+                    loading.style.display = "none";
+                }
+
+                if (playerInfo) {
+                    playerInfo.style.display = "none";
+                }
+
+            }
+
+        }, 800);
+
+    });
+
+                    }
 // ===================================
 // PART 7 : START APP
 // ===================================
