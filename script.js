@@ -234,42 +234,6 @@ let checkTimer;
 
 if (playerInput) {
 
-    playerInput.addEventListener("input", function () {
-
-        clearTimeout(checkTimer);
-
-        const playerId = this.value.trim();
-
-        if (playerInfo) playerInfo.style.display = "none";
-
-        if (playerId.length < 5) {
-
-            if (loading) loading.style.display = "none";
-
-            return;
-
-        }
-
-        if (loading) loading.style.display = "block";
-
-        checkTimer = setTimeout(async () => {
-
-            try {
-
-                const response = await fetch(
-                    "https://e-kenzo-api.onrender.com/check-player",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            slug: "freefire-sgmy",
-                            player_id: playerId
-                        })
-                    }
-                );
-
                 const data = await response.json();
 
                 if (loading) loading.style.display = "none";
