@@ -357,3 +357,68 @@ if (onlineDot) {
     }, 800);
 
 }
+// ===================================
+// CHECK PLAYER BUTTON
+// ===================================
+
+const checkPlayerBtn = document.getElementById("checkPlayerBtn");
+
+if (checkPlayerBtn) {
+
+    checkPlayerBtn.addEventListener("click", async () => {
+
+        const playerId = document.getElementById("player-id").value.trim();
+
+        if (playerId === "") {
+            alert("Please enter Player ID");
+            return;
+        }
+
+        loading.style.display = "block";
+        playerInfo.style.display = "none";
+
+        try {
+
+            const response = await fetch(
+                "https://e-kenzo-api.onrender.com/check-player",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        slug: "freefire-sgmy",
+                        player_id: playerId
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            loading.style.display = "none";
+
+            if (!response.ok) {
+                throw new Error(data.message || "Check Failed");
+            }
+
+            const nickname =
+                data.nickname ||
+                data.data?.nickname ||
+                data.name ||
+                "Unknown";
+
+            playerName.textContent = nickname;
+            playerIdShow.textContent = playerId;
+
+            playerInfo.style.display = "block";
+
+        } catch (err) {
+
+            loading.style.display = "none";
+            alert("Player ID not found");
+
+        }
+
+    });
+
+}
