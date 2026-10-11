@@ -210,14 +210,16 @@ img{
 
     transform:translateY(100%);
     opacity:0;
-    transition:transform .35s ease, opacity .35s ease;
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
 }
 
 .package-overlay.active .package-panel{
     transform:translateY(0);
     opacity:1;
 }
-
 .panel-header{
     display:flex;
     justify-content:space-between;
@@ -383,4 +385,14 @@ img{
 
 #continueBtn:hover{
     background:#6a3cff;
+   }
+.package-panel{
+    touch-action:none;
+    user-select:none;
+    -webkit-user-select:none;
+}
+
+.package-card{
+    user-select:none;
+    -webkit-user-select:none;
    }
