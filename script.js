@@ -422,3 +422,25 @@ if (checkPlayerBtn) {
     });
 
 }
+// ===================================
+// PACKAGE SELECT + AUTO SCROLL
+// ===================================
+
+document.querySelectorAll(".package-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        document.querySelectorAll(".package-card").forEach(c => {
+            c.classList.remove("active");
+        });
+
+        card.classList.add("active");
+
+        document.getElementById("paymentSection")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+});
