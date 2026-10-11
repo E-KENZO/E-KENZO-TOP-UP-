@@ -411,6 +411,17 @@ if (checkPlayerBtn) {
             playerIdShow.textContent = playerId;
 
             playerInfo.style.display = "block";
+            const packageSection = document.getElementById("packageSection");
+
+if (packageSection) {
+
+    packageSection.style.display = "block";
+
+    packageSection.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
 
         } catch (err) {
 
