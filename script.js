@@ -1,24 +1,53 @@
-// =========================
-// MENU
-// =========================
+// ===================================
+// E-KENZO GAME TOP UP
+// script.js
+// PART 1 : MENU
+// ===================================
 
+// Open Menu
 function openMenu() {
+
     const menu = document.getElementById("side-menu");
+
     if (menu) {
         menu.classList.add("active");
     }
+
 }
 
+// Close Menu
 function closeMenu() {
+
     const menu = document.getElementById("side-menu");
+
     if (menu) {
         menu.classList.remove("active");
     }
+
 }
 
-docu// =========================
-// BANNER
-// =========================
+// Close menu when click outside
+document.addEventListener("click", function (e) {
+
+    const menu = document.getElementById("side-menu");
+    const menuBtn = document.querySelector(".menu-btn");
+
+    if (
+        menu &&
+        menuBtn &&
+        menu.classList.contains("active") &&
+        !menu.contains(e.target) &&
+        !menuBtn.contains(e.target)
+    ) {
+
+        closeMenu();
+
+    }
+
+});
+// ===================================
+// PART 2 : BANNER SLIDER
+// ===================================
 
 const banners = [
     "assets/banners/banner1.png",
@@ -31,31 +60,31 @@ let currentBanner = 0;
 const banner = document.getElementById("banner");
 const dots = document.querySelectorAll(".dot");
 
-function showBanner(index) {
+function showBanner(index){
 
-    if (!banner) return;
+    if(!banner) return;
 
     banner.style.opacity = "0";
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         banner.src = banners[index];
 
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === index);
+        dots.forEach((dot,i)=>{
+            dot.classList.toggle("active", i===index);
         });
 
         banner.style.opacity = "1";
 
-    }, 250);
+    },300);
 
 }
 
-function nextBanner() {
+function nextBanner(){
 
     currentBanner++;
 
-    if (currentBanner >= banners.length) {
+    if(currentBanner >= banners.length){
         currentBanner = 0;
     }
 
@@ -63,17 +92,17 @@ function nextBanner() {
 
 }
 
-if (banner) {
+if(banner){
 
     showBanner(0);
 
-    setInterval(nextBanner, 3000);
+    setInterval(nextBanner,3000);
 
 }
 
-dots.forEach((dot, index) => {
+dots.forEach((dot,index)=>{
 
-    dot.addEventListener("click", () => {
+    dot.addEventListener("click",()=>{
 
         currentBanner = index;
 
@@ -81,25 +110,11 @@ dots.forEach((dot, index) => {
 
     });
 
-});ment.addEventListener("click", function (e) {
-
-    const menu = document.getElementById("side-menu");
-    const menuBtn = document.querySelector(".menu-btn");
-
-    if (
-        menu &&
-        menuBtn &&
-        menu.classList.contains("active") &&
-        !menu.contains(e.target) &&
-        !menuBtn.contains(e.target)
-    ) {
-        closeMenu();
-    }
-
 });
-// =========================
-// FREE FIRE PACKAGE PANEL
-// =========================
+
+// ===================================
+// PART 3 : FREE FIRE PACKAGE PANEL
+// ===================================
 
 const packageOverlay = document.getElementById("packageOverlay");
 const packageGrid = document.getElementById("packageGrid");
@@ -108,28 +123,28 @@ const closePanel = document.getElementById("closePanel");
 
 const freefirePackages = [
 
-    { name: "25 Diamonds", price: "$0.25", img: "assets/icons/diamond.png" },
-    { name: "50 Diamonds", price: "$0.45", img: "assets/icons/diamond.png" },
-    { name: "100 Diamonds", price: "$0.90", img: "assets/icons/diamond.png" },
-    { name: "210 Diamonds", price: "$1.80", img: "assets/icons/diamond.png" },
+    {name:"25 Diamonds",price:"$0.25",img:"assets/icons/diamond.png"},
+    {name:"50 Diamonds",price:"$0.45",img:"assets/icons/diamond.png"},
+    {name:"100 Diamonds",price:"$0.90",img:"assets/icons/diamond.png"},
+    {name:"210 Diamonds",price:"$1.80",img:"assets/icons/diamond.png"},
 
-    { name: "310 Diamonds", price: "$2.70", img: "assets/icons/diamond.png" },
-    { name: "520 Diamonds", price: "$4.50", img: "assets/icons/diamond.png" },
-    { name: "1060 Diamonds", price: "$8.90", img: "assets/icons/diamond.png" },
-    { name: "2180 Diamonds", price: "$17.90", img: "assets/icons/diamond.png" },
+    {name:"310 Diamonds",price:"$2.70",img:"assets/icons/diamond.png"},
+    {name:"520 Diamonds",price:"$4.50",img:"assets/icons/diamond.png"},
+    {name:"1060 Diamonds",price:"$8.90",img:"assets/icons/diamond.png"},
+    {name:"2180 Diamonds",price:"$17.90",img:"assets/icons/diamond.png"},
 
-    { name: "5600 Diamonds", price: "$44.90", img: "assets/icons/diamond.png" },
-    { name: "Weekly", price: "$1.89", img: "assets/icons/diamond.png" },
-    { name: "Monthly", price: "$7.99", img: "assets/icons/diamond.png" },
-    { name: "Level Up", price: "$3.99", img: "assets/icons/diamond.png" }
+    {name:"5600 Diamonds",price:"$44.90",img:"assets/icons/diamond.png"},
+    {name:"Weekly",price:"$1.89",img:"assets/icons/diamond.png"},
+    {name:"Monthly",price:"$7.99",img:"assets/icons/diamond.png"},
+    {name:"Level Up",price:"$3.99",img:"assets/icons/diamond.png"}
 
 ];
 
-if (packageGrid) {
+if(packageGrid){
 
     packageGrid.innerHTML = "";
 
-    freefirePackages.forEach(item => {
+    freefirePackages.forEach(item=>{
 
         packageGrid.innerHTML += `
         <div class="package-card">
@@ -143,9 +158,9 @@ if (packageGrid) {
 
 }
 
-if (freeFireCard) {
+if(freeFireCard){
 
-    freeFireCard.addEventListener("click", function(e){
+    freeFireCard.addEventListener("click",(e)=>{
 
         e.preventDefault();
 
@@ -155,9 +170,9 @@ if (freeFireCard) {
 
 }
 
-if (closePanel) {
+if(closePanel){
 
-    closePanel.addEventListener("click", function(){
+    closePanel.addEventListener("click",()=>{
 
         packageOverlay.classList.remove("active");
 
@@ -165,11 +180,11 @@ if (closePanel) {
 
 }
 
-if (packageOverlay) {
+if(packageOverlay){
 
-    packageOverlay.addEventListener("click", function(e){
+    packageOverlay.addEventListener("click",(e)=>{
 
-        if(e.target === packageOverlay){
+        if(e.target===packageOverlay){
 
             packageOverlay.classList.remove("active");
 
@@ -177,16 +192,21 @@ if (packageOverlay) {
 
     });
 
-}
+                        }
+// ===================================
+// PART 4 : PACKAGE SELECT
+// ===================================
 
-document.addEventListener("click", function(e){
+document.addEventListener("click",(e)=>{
 
     const card = e.target.closest(".package-card");
 
     if(!card) return;
 
-    document.querySelectorAll(".package-card").forEach(c=>{
-        c.classList.remove("active");
+    document.querySelectorAll(".package-card").forEach(item=>{
+
+        item.classList.remove("active");
+
     });
 
     card.classList.add("active");
@@ -200,63 +220,9 @@ document.addEventListener("click", function(e){
     }
 
 });
-// =========================
-// SELECT PACKAGE
-// =========================
-
-const payBtn = document.getElementById("pay-btn");
-const selectedPackage = document.getElementById("selected-package");
-const selectedPrice = document.getElementById("selected-price");
-
-document.addEventListener("click", function (e) {
-
-    const card = e.target.closest(".package-card");
-
-    if (!card) return;
-
-    document.querySelectorAll(".package-card").forEach(item => {
-        item.classList.remove("active");
-    });
-
-    card.classList.add("active");
-
-    if (selectedPackage) {
-        selectedPackage.textContent =
-            card.querySelector("h3").textContent;
-    }
-
-    if (selectedPrice) {
-        selectedPrice.textContent =
-            card.querySelector("p").textContent;
-    }
-
-    if (payBtn) {
-        payBtn.disabled = false;
-        payBtn.innerText = "បន្តទៅការទូទាត់";
-    }
-
-});
-
-// =========================
-// PAYMENT BUTTON
-// =========================
-
-if (payBtn) {
-
-    payBtn.addEventListener("click", function () {
-
-        if (payBtn.disabled) return;
-
-        alert("ជំហានបន្ទាប់យើងនឹងទៅ Payment Page");
-
-        // location.href = "payment.html";
-
-    });
-
-        }
-    // =========================
-// AUTO CHECK PLAYER ID
-// =========================
+// ===================================
+// PART 5 : AUTO CHECK PLAYER ID
+// ===================================
 
 const playerInput = document.getElementById("player-id");
 const loading = document.getElementById("loading");
@@ -274,23 +240,17 @@ if (playerInput) {
 
         const playerId = this.value.trim();
 
-        if (playerInfo) {
-            playerInfo.style.display = "none";
-        }
+        if (playerInfo) playerInfo.style.display = "none";
 
         if (playerId.length < 5) {
 
-            if (loading) {
-                loading.style.display = "none";
-            }
+            if (loading) loading.style.display = "none";
 
             return;
 
         }
 
-        if (loading) {
-            loading.style.display = "flex";
-        }
+        if (loading) loading.style.display = "block";
 
         checkTimer = setTimeout(async () => {
 
@@ -312,13 +272,9 @@ if (playerInput) {
 
                 const data = await response.json();
 
-                if (loading) {
-                    loading.style.display = "none";
-                }
+                if (loading) loading.style.display = "none";
 
-                if (!response.ok) {
-                    throw new Error(data.message || "Check Failed");
-                }
+                if (!response.ok) throw new Error();
 
                 const nickname =
                     data.nickname ||
@@ -326,29 +282,16 @@ if (playerInput) {
                     data.name ||
                     "Unknown";
 
-                if (playerName) {
-                    playerName.textContent = nickname;
-                }
+                playerName.textContent = nickname;
+                playerIdShow.textContent = playerId;
 
-                if (playerIdShow) {
-                    playerIdShow.textContent = playerId;
-                }
-
-                if (playerInfo) {
-                    playerInfo.style.display = "flex";
-                }
+                playerInfo.style.display = "block";
 
             } catch (err) {
 
-                console.log(err);
+                if (loading) loading.style.display = "none";
 
-                if (loading) {
-                    loading.style.display = "none";
-                }
-
-                if (playerInfo) {
-                    playerInfo.style.display = "none";
-                }
+                if (playerInfo) playerInfo.style.display = "none";
 
             }
 
@@ -356,12 +299,41 @@ if (playerInput) {
 
     });
 
-        }
-    // =========================
-// START APP
-// =========================
+                    }
+// ===================================
+// PART 6 : CONTINUE BUTTON
+// ===================================
 
-window.addEventListener("load", function () {
+const continueBtn = document.getElementById("continueBtn");
+
+if (continueBtn) {
+
+    continueBtn.addEventListener("click", function () {
+
+        const playerId = document.getElementById("player-id").value.trim();
+
+        if (playerId === "") {
+
+            alert("Please enter Player ID");
+
+            return;
+
+        }
+
+        alert("Player ID : " + playerId);
+
+        // ជំហានបន្ទាប់យើងនឹងទៅ Payment Page
+
+        // location.href = "payment.html";
+
+    });
+
+}
+// ===================================
+// PART 7 : START APP
+// ===================================
+
+window.addEventListener("load", () => {
 
     console.log("✅ E-KENZO Loaded");
 
@@ -370,3 +342,18 @@ window.addEventListener("load", function () {
     }
 
 });
+// ===================================
+// PART 8 : TELEGRAM ONLINE
+// ===================================
+
+const onlineDot = document.querySelector(".online-dot");
+
+if (onlineDot) {
+
+    setInterval(() => {
+
+        onlineDot.classList.toggle("pulse");
+
+    }, 800);
+
+}
