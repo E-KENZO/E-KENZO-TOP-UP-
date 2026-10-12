@@ -738,3 +738,88 @@ PLAYER CARD
     font-size:14px;
 
 }
+/*=========================
+PLAYER INFO CARD
+=========================*/
+
+.player-card{
+
+    display:none;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin:18px 0;
+
+    padding:16px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+
+    animation:fadePlayer .35s ease;
+
+}
+
+.player-avatar{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:16px;
+
+    object-fit:cover;
+
+}
+
+.player-detail{
+
+    flex:1;
+
+}
+
+.player-detail h2{
+
+    margin:0;
+
+    color:#111827;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.player-detail p{
+
+    margin-top:6px;
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+@keyframes fadePlayer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
