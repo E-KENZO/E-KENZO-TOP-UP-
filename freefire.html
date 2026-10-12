@@ -107,17 +107,46 @@
     </div>
 
     </section>
-    <section id="paymentSection" class="payment-section">
+    <section id="paymentSection" class="payment-section" style="display:none;">
 
-    <h2>Payment</h2>
+    <h2>Payment Method</h2>
 
-    <img src="assets/khqr.png" alt="KHQR" class="khqr">
+    <div class="payment-methods">
 
-    <button class="pay-btn">
-        Continue Payment
-    </button>
+        <label class="pay-item">
+            <input type="radio" name="payment" checked>
+            ABA
+        </label>
 
-        </section>
+        <label class="pay-item">
+            <input type="radio" name="payment">
+            ACLEDA
+        </label>
+
+        <label class="pay-item">
+            <input type="radio" name="payment">
+            KHQR
+        </label>
+
+    </div>
+
+    <div class="summary-card">
+        <h3>Order Summary</h3>
+
+        <p>Package :
+            <span id="selectedPackage">-</span>
+        </p>
+
+        <p>Price :
+            <span id="selectedPrice">$0.00</span>
+        </p>
+
+        <button class="pay-btn">
+            Continue Payment
+        </button>
+    </div>
+
+</section>
 <script src="script.js"></script>
 
 </body>
