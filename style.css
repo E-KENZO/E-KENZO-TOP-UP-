@@ -676,3 +676,8 @@ body{
 
     transform:scale(1.08);
 }
+.home-btn img{
+    width:24px;
+    height:24px;
+    object-fit:contain;
+}
