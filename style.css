@@ -831,30 +831,34 @@ PLAYER CARD
 .payment-methods{
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:10px;
+    margin-top:15px;
 }
 
 .pay-item{
     display:flex;
+    justify-content:space-between;
     align-items:center;
-    gap:12px;
-
-    padding:14px;
 
     background:#fff;
+    border:1.5px solid #e5e7eb;
+    border-radius:14px;
 
-    border:2px solid #ececec;
-
-    border-radius:16px;
+    padding:12px 15px;
 
     cursor:pointer;
-
-    transition:.3s;
+    transition:.25s;
 }
 
 .pay-item:hover{
     border-color:#6c2cff;
-    box-shadow:0 6px 16px rgba(108,44,255,.18);
+    box-shadow:0 4px 12px rgba(108,44,255,.15);
+}
+
+.pay-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .pay-logo{
@@ -863,15 +867,18 @@ PLAYER CARD
     object-fit:contain;
 }
 
-.pay-item span{
-    flex:1;
-    font-weight:700;
+.pay-left span{
+    font-size:15px;
+    font-weight:600;
     color:#222;
 }
 
-.pay-item input{
+.pay-item input[type="radio"]{
+    width:20px;
+    height:20px;
     accent-color:#6c2cff;
 }
+
 /* =========================
    KHQR MODAL
 ========================= */
