@@ -142,7 +142,9 @@ img{
 .games{
     width:95%;
     margin:20px auto;
-}
+    padding:20px 0 10px;
+    background:transparent;
+   }
 
 .games h2{
     text-align:center;
@@ -311,7 +313,7 @@ img{
 /* ========= FREE FIRE V2 ========= */
 
 body{
-    background:#f5f6fb;
+    background:#0f172a;
     font-family:Arial,sans-serif;
 }
 
