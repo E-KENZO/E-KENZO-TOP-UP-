@@ -478,3 +478,11 @@ document.querySelectorAll(".package-card").forEach(card => {
     });
 
 });
+document.querySelectorAll(".package-card").forEach(card=>{
+    card.addEventListener("click",()=>{
+        document.querySelectorAll(".package-card")
+            .forEach(c=>c.classList.remove("selected"));
+
+        card.classList.add("selected");
+    });
+});
