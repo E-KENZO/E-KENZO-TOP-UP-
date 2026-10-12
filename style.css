@@ -757,3 +757,69 @@ PLAYER CARD
     box-shadow:0 8px 25px rgba(0,0,0,.08);
 
     animation:fadePlayer .
+/* =========================
+   PLAYER CARD
+========================= */
+
+.player-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-top:18px;
+    padding:15px;
+
+    background:#fff;
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    animation:fadePlayer .35s ease;
+}
+
+.player-avatar{
+    width:68px;
+    height:68px;
+
+    border-radius:16px;
+
+    object-fit:cover;
+
+    border:2px solid #6c2cff;
+}
+
+.player-detail{
+    flex:1;
+}
+
+.player-detail h2{
+    margin:0;
+    font-size:18px;
+    font-weight:700;
+    color:#111827;
+}
+
+.player-detail p{
+    margin-top:6px;
+    color:#6b7280;
+    font-size:14px;
+}
+
+.player-detail span{
+    color:#6c2cff;
+    font-weight:700;
+}
+
+@keyframes fadePlayer{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
