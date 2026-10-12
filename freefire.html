@@ -111,44 +111,52 @@
     </div>
 
     </section>
-    <section id="paymentSection" class="payment-section" style="display:none;">
+     id=<section"paymentSection" class="payment-section" style="display:none;">
 
     <h2>Payment Method</h2>
+<h2>ជ្រើសរើសវិធីបង់ប្រាក់</h2>
 
-    <div class="payment-methods">
+<div class="payment-methods">
 
-        <label class="pay-item">
-            <input type="radio" name="payment" checked>
-            ABA
-        </label>
+    <label class="pay-item">
+        <input type="radio" name="payment" value="aba" checked>
+        <img src="images/aba.png" class="pay-logo">
+        <span>ABA Bank</span>
+    </label>
 
-        <label class="pay-item">
-            <input type="radio" name="payment">
-            ACLEDA
-        </label>
+    <label class="pay-item">
+        <input type="radio" name="payment" value="acleda">
+        <img src="images/acleda.png" class="pay-logo">
+        <span>ACLEDA Bank</span>
+    </label>
 
-        <label class="pay-item">
-            <input type="radio" name="payment">
-            KHQR
-        </label>
+    <label class="pay-item">
+        <input type="radio" name="payment" value="khqr">
+        <img src="images/khqr.png" class="pay-logo">
+        <span>KHQR</span>
+    </label>
 
-    </div>
+</div>
 
-    <div class="summary-card">
-        <h3>Order Summary</h3>
+<div class="summary-card">
 
-        <p>Package :
-            <span id="selectedPackage">-</span>
-        </p>
+    <h3>Order Summary</h3>
 
-        <p>Price :
-            <span id="selectedPrice">$0.00</span>
-        </p>
+    <p>
+        Package :
+        <span id="selectedPackage">-</span>
+    </p>
 
-        <button class="pay-btn">
-            Continue Payment
-        </button>
-    </div>
+    <p>
+        Price :
+        <span id="selectedPrice">$0.00</span>
+    </p>
+
+    <button id="payNow" class="pay-btn">
+        Continue Payment
+    </button>
+
+</div>
 
 </section>
 <script src="script.js"></script>
