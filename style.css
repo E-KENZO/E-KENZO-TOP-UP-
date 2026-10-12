@@ -145,41 +145,52 @@ img{
 }
 
 .games h2{
-    margin-bottom:15px;
+    text-align:center;
+    font-size:24px;
+    color:#ffffff;
+    margin:25px 0;
+    font-weight:700;
 }
 
 .game-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:18px;
+    padding:0 15px;
 }
-
 .game-card{
-    background:#1b2235;
-    border-radius:15px;
-    padding:15px;
-    text-align:center;
-    transition:.25s;
+    display:block;
+    background:#ffffff;
+    border-radius:20px;
+    padding:10px;
+    text-decoration:none;
+    overflow:hidden;
+    border:1px solid #ececec;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:all .35s ease;
 }
 
 .game-card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-6px);
+    border-color:#7c3aed;
+    box-shadow:0 15px 35px rgba(124,58,237,.25);
 }
 
 .game-card img{
-    width:90px;
-    height:90px;
-    margin:auto;
-    border-radius:12px;
-    object-fit:cover;
+    width:100%;
     display:block;
-    background:transparent;
-    box-shadow:none;
-   }
+    border-radius:14px;
+    object-fit:cover;
+}
+
 .game-card h3{
-    margin-top:10px;
-    font-size:15px;
-  }
+    margin-top:12px;
+    text-align:center;
+    font-size:16px;
+    font-weight:700;
+    color:#1f2937;
+}
+
 
 
 /* =========================
