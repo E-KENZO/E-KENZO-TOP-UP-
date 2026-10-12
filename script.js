@@ -486,3 +486,44 @@ document.querySelectorAll(".package-card").forEach(card=>{
         card.classList.add("selected");
     });
 });
+// =========================
+// KHQR MODAL
+// =========================
+
+const payNowBtn = document.getElementById("payNow");
+const khqrModal = document.getElementById("khqrModal");
+const closeKhqr = document.getElementById("closeKhqr");
+
+if (payNowBtn) {
+
+    payNowBtn.addEventListener("click", function () {
+
+        khqrModal.classList.add("active");
+
+    });
+
+}
+
+if (closeKhqr) {
+
+    closeKhqr.addEventListener("click", function () {
+
+        khqrModal.classList.remove("active");
+
+    });
+
+}
+
+if (khqrModal) {
+
+    khqrModal.addEventListener("click", function (e) {
+
+        if (e.target === khqrModal) {
+
+            khqrModal.classList.remove("active");
+
+        }
+
+    });
+
+                               }
