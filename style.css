@@ -449,7 +449,6 @@ body{
 .pay-btn:hover{
     background:#5720d8;
 }
-
 .package-grid{
     display:grid;
     grid-template-columns:repeat(5,1fr);
@@ -458,31 +457,44 @@ body{
 }
 
 .package-card{
-.package-card{
     margin:4px;
     background:#fff;
     border:2px solid #ececec;
     border-radius:12px;
     padding:8px;
     text-align:center;
-    transition:.3s;
     cursor:pointer;
+    transition:all .3s ease;
+}
+
+.package-card:hover{
+    transform:translateY(-3px);
+    border-color:#6c2cff;
+}
+
+.package-card.selected{
+    border-color:#6c2cff;
+    box-shadow:0 0 12px rgba(108,44,255,.3);
 }
 
 .package-card img{
     width:45px;
     height:45px;
     object-fit:contain;
+    margin-bottom:6px;
 }
 
 .package-card h3{
     font-size:12px;
+    margin:4px 0;
+    color:#222;
 }
 
 .package-card p{
     font-size:11px;
     color:#6c2cff;
     font-weight:600;
+    margin:0;
 }
 /* ========= HEADER V2 ========= */
 
