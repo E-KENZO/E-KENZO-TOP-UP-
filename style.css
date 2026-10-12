@@ -681,3 +681,60 @@ body{
     height:24px;
     object-fit:contain;
 }
+/*==========================
+PLAYER CARD
+==========================*/
+
+.player-card{
+
+    display:none;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:18px 0;
+
+    padding:15px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.player-game{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:16px;
+
+    object-fit:cover;
+
+}
+
+.player-info h2{
+
+    margin:0;
+
+    color:#111827;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.player-info p{
+
+    margin-top:6px;
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
