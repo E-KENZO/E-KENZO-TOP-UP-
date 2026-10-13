@@ -808,37 +808,26 @@ PLAYER CARD
     color:#6c2cff;
     margin-bottom:18px;
 }
-
 .pay-card{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:12px;
 
-    background:#fff;
-    border:2px solid #ececec;
-    border-radius:18px;
-
-    padding:14px;
+    padding:12px 15px;
     margin-bottom:12px;
 
+    border:2px solid #ececec;
+    border-radius:14px;
+
+    background:#fff;
     cursor:pointer;
-    transition:.25s;
-}
-
-.pay-card:hover{
-    border-color:#6c2cff;
-}
-
-.pay-card input{
-    width:20px;
-    height:20px;
-    accent-color:#6c2cff;
 }
 
 .pay-logo{
-    width:46px;
-    height:46px;
+    width:40px;
+    height:40px;
     object-fit:contain;
+    flex-shrink:0;
 }
 
 .pay-info{
@@ -847,15 +836,21 @@ PLAYER CARD
 
 .pay-info h3{
     margin:0;
-    font-size:17px;
+    font-size:16px;
     color:#222;
 }
 
 .pay-info p{
-    margin-top:4px;
-    font-size:13px;
-    color:#777;
+    margin-top:3px;
+    font-size:12px;
+    color:#888;
 }
+
+.pay-card input{
+    width:18px;
+    height:18px;
+    accent-color:#6c2cff;
+   }
 
 .summary-card{
     margin-top:18px;
