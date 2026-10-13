@@ -111,68 +111,53 @@
     </div>
 
     </section>
-  
 <section id="paymentSection" class="payment-section">
 
-    <h2 class="payment-title">
-        Payment Method
-    </h2>
+<h2 class="payment-title">Payment Method</h2>
 
-    <label class="pay-card">
+<label class="pay-card">
+    <img src="assets/icons/aba.jpeg" class="pay-logo" alt="ABA">
 
-        <img src="assets/icons/aba.jpeg" class="pay-logo" alt="ABA">
-
-        <div class="pay-info">
-            <h3>ABA PayWay</h3>
-            <p>Scan to pay with any banking app</p>
-        </div>
-             <input type="radio" name="payment" value="aba" checked>
-    </label>
-
-    <label class="pay-card">
-
-        <img src="assets/icons/acleda.png" class="pay-logo" alt="ACLEDA">
-
-        <div class="pay-info">
-            <h3>ACLEDA Bank</h3>
-            <p>Mobile Banking</p>
-        </div>
-            <input type="radio" name="payment" value="acleda">
-    </label>
-
-    <label class="pay-card">
-
-        <img src="assets/icons/khqr.png" class="pay-logo" alt="KHQR">
-
-        <div class="pay-info">
-            <h3>KHQR</h3>
-            <p>Universal QR Payment</p>
-        </div>
-            <input type="radio" name="payment" value="khqr">
-    </label>
-
-    <div class="summary-card">
-
-        <div class="summary-row">
-
-            <span id="selectedPackage">
-                -
-            </span>
-
-            <span id="selectedPrice">
-                $0.00
-            </span>
-
-        </div>
-
+    <div class="pay-info">
+        <h3>ABA Bank</h3>
+        <p>Scan with ABA App</p>
     </div>
 
-    <button id="payNow" class="pay-btn">
+    <input type="radio" name="payment" value="aba" checked>
+</label>
 
-        PAY NOW
+<label class="pay-card">
+    <img src="assets/icons/acleda.png" class="pay-logo" alt="ACLEDA">
 
-    </button>
+    <div class="pay-info">
+        <h3>ACLEDA Bank</h3>
+        <p>Mobile Banking</p>
+    </div>
 
+    <input type="radio" name="payment" value="acleda">
+</label>
+
+<label class="pay-card">
+    <img src="assets/icons/khqr.png" class="pay-logo" alt="KHQR">
+
+    <div class="pay-info">
+        <h3>KHQR</h3>
+        <p>Universal QR Payment</p>
+    </div>
+
+    <input type="radio" name="payment" value="khqr">
+</label>
+
+<div class="summary-card">
+    <div class="summary-row">
+        <span id="selectedPackage">-</span>
+        <span id="selectedPrice">$0.00</span>
+    </div>
+</div>
+
+<button id="payNow" class="pay-btn">
+    PAY NOW
+</button>
 </section>
 <div id="khqrModal" class="khqr-modal">
 
