@@ -22,39 +22,55 @@ img{
     max-width:100%;
     display:block;
 }
-/* =========================
-   SIDE MENU
-========================= */
+/* ======================================
+   HEADER
+====================================== */
 
-.side-menu{
-    position:fixed;
+.ff-header{
+    position:sticky;
     top:0;
-    left:-280px;
-    width:280px;
-    height:100%;
-    background:#16213e;
-    transition:.3s;
-    z-index:9999;
-    padding:20px;
+    z-index:999;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 18px;
+
+    background:linear-gradient(135deg,#6c2cff,#4f46e5);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-.side-menu.active{
-    left:0;
+.ff-title{
+    font-size:24px;
+    font-weight:800;
+    color:#fff;
 }
 
-.close-btn{
-    display:block;
-    text-align:right;
-    font-size:28px;
-    margin-bottom:20px;
+.ff-title span{
+    color:#ffd700;
 }
 
-.side-menu a{
-    display:block;
-    padding:14px 0;
-    border-bottom:1px solid rgba(255,255,255,.1);
+.back-btn,
+.home-btn{
+    width:44px;
+    height:44px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+
+    color:#fff;
 }
 
+.home-btn img{
+    width:22px;
+    height:22px;
+}
 /* =========================
    BANNER
 ========================= */
@@ -147,55 +163,7 @@ img{
     padding:20px;
     font-size:14p
 }
-/* ======================================
-   HEADER
-====================================== */
 
-.ff-header{
-    position:sticky;
-    top:0;
-    z-index:999;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:16px 18px;
-
-    background:linear-gradient(135deg,#6c2cff,#4f46e5);
-
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-.ff-title{
-    font-size:24px;
-    font-weight:800;
-    color:#fff;
-}
-
-.ff-title span{
-    color:#ffd700;
-}
-
-.back-btn,
-.home-btn{
-    width:44px;
-    height:44px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border-radius:50%;
-    background:rgba(255,255,255,.18);
-
-    color:#fff;
-}
-
-.home-btn img{
-    width:22px;
-    height:22px;
-}
 
 /* ======================================
    SECTION
