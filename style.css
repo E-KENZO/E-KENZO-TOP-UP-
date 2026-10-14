@@ -502,3 +502,42 @@ font-size:17px;
 }
 
    }
+/* ========= HEADER V2 ========= */
+
+.header{
+    background:linear-gradient(135deg,#7b2cff,#5a00ff);
+    color:#fff;
+    padding:15px 18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-radius:0 0 20px 20px;
+
+    box-shadow:0 8px 20px rgba(123,44,255,.25);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo h1{
+    font-size:20px;
+    margin:0;
+}
+
+.logo p{
+    margin:0;
+    font-size:13px;
+    opacity:.9;
+}
