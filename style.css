@@ -531,3 +531,82 @@ font-size:17px;
 .menu-btn:hover{
     background:rgba(255,255,255,.22);
 }
+/* =========================
+   SIDE MENU
+========================= */
+
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-280px;
+    width:280px;
+    height:100%;
+    background:#16213e;
+    transition:.3s;
+    z-index:9999;
+    padding:20px;
+}
+
+.side-menu.active{
+    left:0;
+}
+
+.close-btn{
+    display:block;
+    text-align:right;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.side-menu a{
+    display:block;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+/* =========================
+   BANNER
+========================= */
+.banner{
+    width:94%;
+    margin:20px auto;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 35px rgba(0,0,0,.28);
+    position:relative;
+}
+.banner img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:22px;
+    transition:transform .45s ease;
+}
+
+.banner:hover img{
+    transform:scale(1.03);
+}
+.dots{
+    position:absolute;
+    left:50%;
+    bottom:15px;
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:8px;
+       }
+.dot{
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.5);
+
+    transition:.3s;
+}
+.dot.active{
+    width:28px;
+    border-radius:20px;
+    background:#ffd700;
+}
