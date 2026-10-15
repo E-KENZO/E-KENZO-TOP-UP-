@@ -486,44 +486,47 @@ document.querySelectorAll(".package-card").forEach(card=>{
         card.classList.add("selected");
     });
 });
-// =========================
-// KHQR MODAL
-// =========================
-
 const payNowBtn = document.getElementById("payNow");
 const khqrModal = document.getElementById("khqrModal");
 const closeKhqr = document.getElementById("closeKhqr");
 
-if (payNowBtn) {
+payNowBtn.addEventListener("click", function () {
 
-    payNowBtn.addEventListener("click", function () {
+    const payment = document.querySelector(
+        'input[name="payment"]:checked'
+    ).value;
+
+    if (payment === "aba") {
+
+        document.getElementById("khqrImage").src =
+            "assets/icons/aba-qr.jpg";
 
         khqrModal.classList.add("active");
 
-    });
+    } else if (payment === "acleda") {
 
-}
+        document.getElementById("khqrImage").src =
+            "assets/icons/acleda-qr.jpg";
 
-if (closeKhqr) {
+        khqrModal.classList.add("active");
 
-    closeKhqr.addEventListener("click", function () {
+    } else if (payment === "khqr") {
 
+        document.getElementById("khqrImage").src =
+            "assets/icons/khqr-qr.jpg";
+
+        khqrModal.classList.add("active");
+
+    }
+
+});
+
+closeKhqr.addEventListener("click", function () {
+    khqrModal.classList.remove("active");
+});
+
+khqrModal.addEventListener("click", function (e) {
+    if (e.target === khqrModal) {
         khqrModal.classList.remove("active");
-
-    });
-
-}
-
-if (khqrModal) {
-
-    khqrModal.addEventListener("click", function (e) {
-
-        if (e.target === khqrModal) {
-
-            khqrModal.classList.remove("active");
-
-        }
-
-    });
-
-                               }
+    }
+});
