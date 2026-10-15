@@ -319,7 +319,7 @@ if (playerInput) {
                     data.nickname ||
                     data.data?.nickname ||
                     data.name ||
-                    "Unknown";
+                    "❌ id មិនត្រឹមត្រូវ";
 
                 if (playerName) {
                     playerName.textContent = nickname;
