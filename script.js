@@ -60,25 +60,7 @@ let currentBanner = 0;
 const banner = document.getElementById("banner");
 const dots = document.querySelectorAll(".dot");
 
-function showBanner(index){
 
-    if(!banner) return;
-
-    banner.style.opacity = "0";
-
-    setTimeout(()=>{
-
-        banner.src = banners[index];
-
-        dots.forEach((dot,i)=>{
-            dot.classList.toggle("active", i===index);
-        });
-
-        banner.style.opacity = "1";
-
-    },300);
-
-}
 
 function nextBanner(){
 
@@ -96,7 +78,32 @@ if(banner){
 
     showBanner(0);
 
-    setInterval(nextBanner,3000);
+    setInterval(nefunction showBanner(index){
+
+    if(!banner) return;
+
+    banner.classList.add("fade-out");
+
+    setTimeout(()=>{
+
+        banner.src = banners[index];
+
+        dots.forEach((dot,i)=>{
+            dot.classList.toggle("active", i === index);
+        });
+
+        banner.onload = () => {
+            banner.classList.remove("fade-out");
+        };
+
+        // បើរូបត្រូវបាន cache រួច សូមបង្ហាញភ្លាម
+        if (banner.complete) {
+            banner.classList.remove("fade-out");
+        }
+
+    }, 300);
+
+    }xtBanner,3000);
 
 }
 
