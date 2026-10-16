@@ -537,6 +537,7 @@ payNowBtn.addEventListener("click", function () {
             "assets/icons/aba-qr.jpg";
 
         khqrModal.classList.add("active");
+        startPaymentTimer();
 
     } else if (payment === "acleda") {
 
@@ -544,6 +545,7 @@ payNowBtn.addEventListener("click", function () {
             "assets/icons/acleda-qr.jpg";
 
         khqrModal.classList.add("active");
+        startPaymentTimer();
 
     } else if (payment === "khqr") {
 
@@ -551,18 +553,22 @@ payNowBtn.addEventListener("click", function () {
             "assets/icons/khqr-qr.jpg";
 
         khqrModal.classList.add("active");
-
+startPaymentTimer();
     }
 
 });
 
 closeKhqr.addEventListener("click", function () {
     khqrModal.classList.remove("active");
+    clearInterval(paymentTimer);
+    paymentTimer = null;
 });
 
 khqrModal.addEventListener("click", function (e) {
     if (e.target === khqrModal) {
         khqrModal.classList.remove("active");
+        clearInterval(paymentTimer);
+        paymentTimer = null;
     }
 });
 
