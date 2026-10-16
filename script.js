@@ -531,4 +531,3 @@ khqrModal.addEventListener("click", function (e) {
     }
 });
 
-}
