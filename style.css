@@ -610,6 +610,16 @@ font-size:17px;
     border-radius:20px;
     background:#ffd700;
 }
+/* ===== SMOOTH BANNER TRANSITION ===== */
+.banner img {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out,
+                transform 0.6s ease-in-out;
+}
+
+.banner img.fade-out {
+    opacity: 0;
+}
 /* =========================
    GAME GRID
 ========================= */
