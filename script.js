@@ -530,3 +530,34 @@ khqrModal.addEventListener("click", function (e) {
         khqrModal.classList.remove("active");
     }
 });
+// =========================
+// KHQR MODAL
+// =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const payNow = document.getElementById("payNow");
+    const modal = document.getElementById("khqrModal");
+    const closeBtn = document.getElementById("closeKhqr");
+
+    if (payNow && modal) {
+        payNow.addEventListener("click", () => {
+            modal.classList.add("active");
+        });
+    }
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+            }
+        });
+    }
+
+});
