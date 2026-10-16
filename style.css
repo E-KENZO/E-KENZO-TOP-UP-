@@ -892,3 +892,70 @@ font-size:17px;
         transition-duration: 0.01ms;
     }
 }
+/* ===== BEAUTIFUL QR PAYMENT SHEET ===== */
+
+.khqr-modal {
+    padding: 0;
+    align-items: flex-end;
+}
+
+.khqr-sheet {
+    width: 100%;
+    max-width: 500px;
+    max-height: 92vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    padding: 28px 22px 32px;
+    border-radius: 28px 28px 0 0;
+
+    background: #ffffff;
+    box-shadow: 0 -8px 35px rgba(0, 0, 0, 0.2);
+}
+
+.khqr-sheet h2 {
+    font-size: 25px;
+    margin: 12px 0 20px;
+    color: #321078;
+}
+
+.khqr-image {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    max-height: 48vh;
+    height: auto;
+    object-fit: contain;
+
+    margin: 18px auto;
+    padding: 12px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+}
+
+.close-khqr {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+
+    background: #f0ebff;
+    color: #321078;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.khqr-sheet .pay-btn {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 14px;
+    border-radius: 16px;
+    font-size: 17px;
+}
