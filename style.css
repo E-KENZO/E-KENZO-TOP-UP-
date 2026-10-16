@@ -821,9 +821,9 @@ font-size:17px;
     height:24px;
     object-fit:contain;
    }
-/* ===== QR MODAL SMOOTH SLIDE UP ===== */
+/* ===== QR MODAL SLIDE UP ===== */
 
-#khqrModal {
+.khqr-modal {
     position: fixed;
     inset: 0;
     z-index: 10000;
@@ -832,7 +832,7 @@ font-size:17px;
     justify-content: center;
     align-items: flex-end;
 
-    padding-top: 20px;
+    padding: 20px 12px 0;
     background: rgba(0, 0, 0, 0.6);
 
     opacity: 0;
@@ -844,24 +844,25 @@ font-size:17px;
         visibility 0.35s ease;
 }
 
-#khqrModal.active {
+.khqr-modal.active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
-#khqrImage {
-    display: block;
-    width: calc(100% - 32px);
-    max-width: 360px;
-    max-height: 75vh;
-    height: auto;
-    object-fit: contain;
+.khqr-sheet {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
 
-    margin: 0 auto;
-    padding: 16px;
+    padding: 24px 18px;
     background: #fff;
-    border-radius: 22px 22px 0 0;
+    border-radius: 24px 24px 0 0;
+
+    text-align: center;
 
     transform: translateY(100%);
     transition:
@@ -870,13 +871,24 @@ font-size:17px;
         );
 }
 
-#khqrModal.active #khqrImage {
+.khqr-modal.active .khqr-sheet {
     transform: translateY(0);
 }
 
+.khqr-image {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    max-height: 55vh;
+    height: auto;
+    object-fit: contain;
+
+    margin: 16px auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    #khqrModal,
-    #khqrImage {
+    .khqr-modal,
+    .khqr-sheet {
         transition-duration: 0.01ms;
     }
 }
