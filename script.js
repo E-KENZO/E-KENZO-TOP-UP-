@@ -489,7 +489,42 @@ document.querySelectorAll(".package-card").forEach(card=>{
 const payNowBtn = document.getElementById("payNow");
 const khqrModal = document.getElementById("khqrModal");
 const closeKhqr = document.getElementById("closeKhqr");
+let paymentTimer = null;
+let paymentSeconds = 120;
+function startPaymentTimer() {
+    clearInterval(paymentTimer);
 
+    paymentSeconds = 120;
+
+    const countdown = document.getElementById("paymentCountdown");
+    const expired = document.getElementById("paymentExpired");
+
+    if (expired) expired.style.display = "none";
+
+    function updateCountdown() {
+        const minutes = Math.floor(paymentSeconds / 60);
+        const seconds = paymentSeconds % 60;
+
+        if (countdown) {
+            countdown.textContent =
+                String(minutes).padStart(2, "0") + ":" +
+                String(seconds).padStart(2, "0");
+        }
+
+        if (paymentSeconds <= 0) {
+            clearInterval(paymentTimer);
+            paymentTimer = null;
+
+            if (expired) expired.style.display = "block";
+            return;
+        }
+
+        paymentSeconds--;
+    }
+
+    updateCountdown();
+    paymentTimer = setInterval(updateCountdown, 1000);
+}
 payNowBtn.addEventListener("click", function () {
 
     const payment = document.querySelector(
