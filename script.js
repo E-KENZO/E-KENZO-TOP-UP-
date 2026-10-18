@@ -48,7 +48,7 @@ document.addEventListener("click", function (e) {
 // ===================================
 // PART 2 : BANNER SLIDER
 // ===================================
-
+   
 const banners = [
     "assets/banners/banner1.png",
     "assets/banners/banner2.png",
@@ -59,66 +59,57 @@ let currentBanner = 0;
 
 const banner = document.getElementById("banner");
 const dots = document.querySelectorAll(".dot");
+let bannerTimer;
 
-
-
-function nextBanner(){
-
-    currentBanner++;
-
-    if(currentBanner >= banners.length){
-        currentBanner = 0;
-    }
-
-    showBanner(currentBanner);
-
-}
-
-if(banner){
-
-    showBanner(0);
-
-    setInterval(nefunction showBanner(index){
-
-    if(!banner) return;
+function showBanner(index) {
+    if (!banner || banners.length === 0) return;
 
     banner.classList.add("fade-out");
 
-    setTimeout(()=>{
+    const nextImage = new Image();
 
+    nextImage.onload = function () {
         banner.src = banners[index];
 
-        dots.forEach((dot,i)=>{
+        dots.forEach((dot, i) => {
             dot.classList.toggle("active", i === index);
         });
 
-        banner.onload = () => {
+        requestAnimationFrame(() => {
             banner.classList.remove("fade-out");
-        };
+        });
+    };
 
-        // បើរូបត្រូវបាន cache រួច សូមបង្ហាញភ្លាម
-        if (banner.complete) {
-            banner.classList.remove("fade-out");
-        }
+    nextImage.onerror = function () {
+        banner.classList.remove("fade-out");
+        console.error("មិនអាចផ្ទុករូប Banner:", banners[index]);
+    };
 
-    }, 300);
-
-    }xtBanner,3000);
-
+    nextImage.src = banners[index];
 }
 
-dots.forEach((dot,index)=>{
+function nextBanner() {
+    currentBanner = (currentBanner + 1) % banners.length;
+    showBanner(currentBanner);
+}
 
-    dot.addEventListener("click",()=>{
+if (banner) {
+    showBanner(currentBanner);
+    bannerTimer = setInterval(nextBanner, 3000);
+}
 
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
         currentBanner = index;
+        showBanner(currentBanner);
 
-        showBanner(index);
-
+        if (bannerTimer) {
+            clearInterval(bannerTimer);
+            bannerTimer = setInterval(nextBanner, 3000);
+        }
     });
-
 });
-
+        
 // ===================================
 // PART 3 : FREE FIRE PACKAGE PANEL
 // ===================================
