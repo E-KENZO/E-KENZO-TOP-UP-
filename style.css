@@ -971,3 +971,22 @@ font-size:17px;
     border-radius: 16px;
     font-size: 17px;
 }
+.payment-timer {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #222;
+}
+
+#paymentCountdown {
+    color: #e53935;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#paymentExpired {
+    text-align: center;
+    margin-top: 10px;
+}
