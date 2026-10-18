@@ -247,9 +247,10 @@ if (continueBtn) {
 
     });
 }
-// =========================
-// AUTO CHECK PLAYER ID
-// =========================
+
+ // =========================
+ // AUTO CHECK PLAYER ID
+ // =========================
 
 const playerInput = document.getElementById("player-id");
 const loading = document.getElementById("loading");
@@ -258,37 +259,39 @@ const playerName = document.getElementById("player-name");
 const playerIdShow = document.getElementById("player-id-show");
 
 let checkTimer;
+let latestCheck = 0;
+const playerCache = new Map();
 
 if (playerInput) {
-
     playerInput.addEventListener("input", function () {
-
         clearTimeout(checkTimer);
 
         const playerId = this.value.trim();
+        const checkNumber = ++latestCheck;
 
-        if (playerInfo) {
-            playerInfo.style.display = "none";
-        }
+        if (playerInfo) playerInfo.style.display = "none";
 
         if (playerId.length < 5) {
-
-            if (loading) {
-                loading.style.display = "none";
-            }
-
+            if (loading) loading.style.display = "none";
             return;
-
         }
 
-        if (loading) {
-            loading.style.display = "flex";
+        // បង្ហាញលទ្ធផលដែលបានរក្សាទុកភ្លាមៗ
+        if (playerCache.has(playerId)) {
+            if (loading) loading.style.display = "none";
+            if (playerName) {
+                playerName.textContent = playerCache.get(playerId);
+            }
+            if (playerIdShow) playerIdShow.textContent = playerId;
+            if (playerInfo) playerInfo.style.display = "flex";
+            return;
         }
 
+        if (loading) loading.style.display = "flex";
+
+        // កាត់បន្ថយពេលរង់ចាំពី 800ms មក 250ms
         checkTimer = setTimeout(async () => {
-
             try {
-
                 const response = await fetch(
                     "https://e-kenzo-api.onrender.com/check-player",
                     {
@@ -305,9 +308,8 @@ if (playerInput) {
 
                 const data = await response.json();
 
-                if (loading) {
-                    loading.style.display = "none";
-                }
+                // មិនបង្ហាញលទ្ធផលចាស់ បើអ្នកបានប្ដូរ ID រួច
+                if (checkNumber !== latestCheck) return;
 
                 if (!response.ok) {
                     throw new Error(data.message || "Check Failed");
@@ -317,39 +319,28 @@ if (playerInput) {
                     data.nickname ||
                     data.data?.nickname ||
                     data.name ||
-                    "❌ id មិនត្រឹមត្រូវ";
+                    "❌ ID មិនត្រឹមត្រូវ";
 
-                if (playerName) {
-                    playerName.textContent = nickname;
-                }
+                playerCache.set(playerId, nickname);
 
-                if (playerIdShow) {
-                    playerIdShow.textContent = playerId;
-                }
-
-                if (playerInfo) {
-                    playerInfo.style.display = "flex";
-                }
+                if (playerName) playerName.textContent = nickname;
+                if (playerIdShow) playerIdShow.textContent = playerId;
+                if (playerInfo) playerInfo.style.display = "flex";
 
             } catch (err) {
+                if (checkNumber !== latestCheck) return;
+                console.log("Player check failed:", err);
 
-                console.log(err);
-
-                if (loading) {
+                if (playerInfo) playerInfo.style.display = "none";
+            } finally {
+                if (checkNumber === latestCheck && loading) {
                     loading.style.display = "none";
                 }
-
-                if (playerInfo) {
-                    playerInfo.style.display = "none";
-                }
-
             }
-
-        }, 800);
-
+        }, 250);
     });
-
-                    }
+                            }
+            
 // ===================================
 // PART 7 : START APP
 // ===================================
