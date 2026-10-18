@@ -990,3 +990,41 @@ font-size:17px;
     text-align: center;
     margin-top: 10px;
 }
+/* ===== QR PAYMENT POLISH ===== */
+
+.khqr-sheet {
+    background: #ffffff;
+    border: 1px solid rgba(108, 44, 255, 0.08);
+    box-shadow: 0 -12px 40px rgba(15, 23, 42, 0.18);
+}
+
+.khqr-sheet h2 {
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.khqr-image {
+    border: 1px solid #eee8ff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(49, 16, 120, 0.08);
+}
+
+.payment-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0 12px;
+}
+
+#paymentCountdown {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 1px;
+}
+
+#paymentExpired {
+    padding: 10px;
+    border-radius: 12px;
+    background: #fff1f2;
+    color: #dc2626 !important;
+   }
