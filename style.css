@@ -531,24 +531,26 @@ font-size:17px;
 .menu-btn:hover{
     background:rgba(255,255,255,.22);
 }
-/* =========================
-   SIDE MENU
-========================= */
 
-.side-menu{
-    position:fixed;
-    top:0;
-    left:-280px;
-    width:280px;
-    height:100%;
-    background:#16213e;
-    transition:.3s;
-    z-index:9999;
-    padding:20px;
+
+/* SIDE MENU */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    box-sizing: border-box;
+    background: #16213e;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 9999;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-.side-menu.active{
-    left:0;
+.side-menu.active {
+    transform: translateX(0);
 }
 
 .close-btn{
