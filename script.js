@@ -64,11 +64,11 @@ const nextBtn = document.querySelector(".banner-arrow.next");
 let bannerTimer;
 let isBannerMoving = false;
 
+
 function showBanner(index, direction = 1) {
     if (!banner || isBannerMoving || banners.length === 0) return;
 
     index = (index + banners.length) % banners.length;
-
     if (index === currentBanner) return;
 
     const slider = document.querySelector(".banner-slider");
@@ -76,9 +76,7 @@ function showBanner(index, direction = 1) {
 
     isBannerMoving = true;
 
-    const oldBanner = banner;
     const newBanner = document.createElement("img");
-
     newBanner.src = banners[index];
     newBanner.alt = "Banner";
     newBanner.className = "banner-slide";
@@ -87,29 +85,40 @@ function showBanner(index, direction = 1) {
 
     slider.appendChild(newBanner);
 
-    newBanner.onload = () => {
-        requestAnimationFrame(() => {
-            oldBanner.classList.add("sliding-out");
-            oldBanner.style.transform =
-                direction === 1 ? "translateX(-100%)" : "translateX(100%)";
+    const finishTransition = () => {
+        banner.src = banners[index];
+        banner.style.visibility = "visible";
+        newBanner.remove();
 
-            newBanner.style.transform = "translateX(0)";
+        currentBanner = index;
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+
+        isBannerMoving = false;
+    };
+
+    newBanner.onload = () => {
+        banner.style.visibility = "hidden";
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                banner.classList.add("sliding-out");
+                banner.style.transform =
+                    direction === 1 ? "translateX(-100%)" : "translateX(100%)";
+
+                newBanner.style.transform = "translateX(0)";
+            });
+        });
+
+        newBanner.addEventListener("transitionend", finishTransition, {
+            once: true
         });
 
         setTimeout(() => {
-            oldBanner.src = banners[index];
-            oldBanner.style.transform = "";
-            oldBanner.classList.remove("sliding-out");
-            newBanner.remove();
-
-            currentBanner = index;
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle("active", i === index);
-            });
-
-            isBannerMoving = false;
-        }, 450);
+            if (isBannerMoving) finishTransition();
+        }, 600);
     };
 
     newBanner.onerror = () => {
@@ -117,45 +126,8 @@ function showBanner(index, direction = 1) {
         isBannerMoving = false;
         console.error("មិនអាចផ្ទុករូប Banner:", banners[index]);
     };
-}
-
-function nextBanner() {
-    showBanner((currentBanner + 1) % banners.length, 1);
-}
-
-function previousBanner() {
-    showBanner((currentBanner - 1 + banners.length) % banners.length, -1);
-}
-
-function resetBannerTimer() {
-    clearInterval(bannerTimer);
-    bannerTimer = setInterval(nextBanner, 3000);
-}
-
-if (banner) {
-    resetBannerTimer();
-}
-
-if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-        nextBanner();
-        resetBannerTimer();
-    });
-}
-
-if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-        previousBanner();
-        resetBannerTimer();
-    });
-}
-
-dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        showBanner(index, index > currentBanner ? 1 : -1);
-        resetBannerTimer();
-    });
-});
+                    }
+                    
 
         
 // ===================================
