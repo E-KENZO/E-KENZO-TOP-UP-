@@ -1449,45 +1449,43 @@ img {
     right: 8px;
   }
      }
-/* Smooth sliding banner transition */
+/* Banner slider - smooth movement */
 .banner-slider {
   position: relative;
   width: 100%;
   overflow: hidden;
-}
-
-.banner-slider #banner,
-.banner-slider .banner-slide {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 450ms ease-in-out;
+  isolation: isolate;
 }
 
 .banner-slider #banner {
+  display: block;
+  width: 100%;
+  height: auto;
   position: relative;
   z-index: 1;
+  transition: none;
 }
 
 .banner-slider .banner-slide {
   position: absolute;
-  inset: 0;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  z-index: 2;
+  transition: transform 450ms ease-in-out;
+  will-change: transform;
 }
 
 .banner-slider #banner.sliding-out {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 
-.banner-slider .banner-slide {
-  height: 100%;
-}
-
-/* Banner arrows */
-.banner-arrow {
+/* Keep arrows visible */
+.banner-slider .banner-arrow {
   z-index: 5;
-   }
-
+}
