@@ -61,9 +61,8 @@ const dots = document.querySelectorAll(".banner + .dots .dot");
 const prevBtn = document.querySelector(".banner-arrow.prev");
 const nextBtn = document.querySelector(".banner-arrow.next");
 
-let bannerTimer;
+let bannerTimer = null;
 let isBannerMoving = false;
-
 
 function showBanner(index, direction = 1) {
     if (!banner || isBannerMoving || banners.length === 0) return;
@@ -77,32 +76,15 @@ function showBanner(index, direction = 1) {
     isBannerMoving = true;
 
     const newBanner = document.createElement("img");
-    newBanner.src = banners[index];
-    newBanner.alt = "Banner";
     newBanner.className = "banner-slide";
+    newBanner.alt = "Banner";
     newBanner.style.transform =
         direction === 1 ? "translateX(100%)" : "translateX(-100%)";
 
-    slider.appendChild(newBanner);
-
-    const finishTransition = () => {
-        banner.src = banners[index];
-        banner.style.visibility = "visible";
-        newBanner.remove();
-
-        currentBanner = index;
-
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === index);
-        });
-
-        isBannerMoving = false;
-    };
-
     newBanner.onload = () => {
-        banner.style.visibility = "hidden";
-
         requestAnimationFrame(() => {
+            slider.appendChild(newBanner);
+
             requestAnimationFrame(() => {
                 banner.classList.add("sliding-out");
                 banner.style.transform =
@@ -111,6 +93,21 @@ function showBanner(index, direction = 1) {
                 newBanner.style.transform = "translateX(0)";
             });
         });
+
+        const finishTransition = () => {
+            banner.src = banners[index];
+            banner.style.transform = "";
+            banner.classList.remove("sliding-out");
+            newBanner.remove();
+
+            currentBanner = index;
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+
+            isBannerMoving = false;
+        };
 
         newBanner.addEventListener("transitionend", finishTransition, {
             once: true
@@ -126,10 +123,51 @@ function showBanner(index, direction = 1) {
         isBannerMoving = false;
         console.error("មិនអាចផ្ទុករូប Banner:", banners[index]);
     };
-                    }
-                    
 
-        
+    newBanner.src = banners[index];
+}
+
+function nextBanner() {
+    showBanner((currentBanner + 1) % banners.length, 1);
+}
+
+function previousBanner() {
+    showBanner((currentBanner - 1 + banners.length) % banners.length, -1);
+}
+
+function resetBannerTimer() {
+    clearInterval(bannerTimer);
+    bannerTimer = setInterval(nextBanner, 3000);
+}
+
+if (banner) {
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            if (index === currentBanner || isBannerMoving) return;
+            showBanner(index, index > currentBanner ? 1 : -1);
+            resetBannerTimer();
+        });
+    });
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            if (isBannerMoving) return;
+            nextBanner();
+            resetBannerTimer();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            if (isBannerMoving) return;
+            previousBanner();
+            resetBannerTimer();
+        });
+    }
+
+    resetBannerTimer();
+}
+
 // ===================================
 // PART 3 : FREE FIRE PACKAGE PANEL
 // ===================================
