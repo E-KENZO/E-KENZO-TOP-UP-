@@ -1387,3 +1387,10 @@ img {
   }
      }
    
+/* Enlarge Telegram icon */
+.telegram-float img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+                      }
+     
