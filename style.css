@@ -1449,3 +1449,45 @@ img {
     right: 8px;
   }
      }
+/* Smooth sliding banner transition */
+.banner-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-slider #banner,
+.banner-slider .banner-slide {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 450ms ease-in-out;
+}
+
+.banner-slider #banner {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-slider .banner-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  object-fit: contain;
+}
+
+.banner-slider #banner.sliding-out {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+}
+
+.banner-slider .banner-slide {
+  height: 100%;
+}
+
+/* Banner arrows */
+.banner-arrow {
+  z-index: 5;
+   }
+
