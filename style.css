@@ -1282,3 +1282,25 @@ font-size:17px;
         max-width: 300px;
     }
    }
+/* E-KENZO: prevent normal text selection */
+html,
+body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Keep form fields usable */
+input,
+textarea,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Prevent images from being dragged or long-pressed easily */
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  pointer-events: none;
+   }
