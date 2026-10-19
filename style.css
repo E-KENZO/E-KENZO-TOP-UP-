@@ -1525,3 +1525,17 @@ img {
 .banner-slider .banner-slide {
   pointer-events: none;
    }
+
+/* Fix side menu hidden state */
+#side-menu.side-menu:not(.active) {
+    transform: translateX(-100%) !important;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#side-menu.side-menu.active {
+    transform: translateX(0) !important;
+    visibility: visible;
+    pointer-events: auto;
+}
+
