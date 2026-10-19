@@ -1386,23 +1386,47 @@ img {
     box-shadow: 0 0 0 7px rgba(0, 230, 118, 0);
   }
      }
+
 /* Banner slider */
 .banner-slider {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
+  isolation: isolate;
 }
 
-/* Banner image */
-.banner-slider #banner {
+/* Banner images */
+.banner-slider #banner,
+.banner-slider .banner-slide {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  box-sizing: border-box;
 }
 
-/* Left and right arrow buttons */
-.banner-arrow {
+.banner-slider #banner {
+  z-index: 1;
+}
+
+.banner-slider .banner-slide {
+  z-index: 2;
+  transition: transform 450ms ease-in-out;
+  will-change: transform;
+}
+
+.banner-slider #banner.sliding-out {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+}
+
+/* Navigation arrows */
+.banner-slider .banner-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1418,77 +1442,32 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
 }
 
-.banner-arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.banner-arrow.prev {
+.banner-slider .banner-arrow.prev {
   left: 12px;
 }
 
-.banner-arrow.next {
+.banner-slider .banner-arrow.next {
   right: 12px;
 }
 
-/* Mobile size */
 @media (max-width: 600px) {
-  .banner-arrow {
+  .banner-slider .banner-arrow {
     width: 34px;
     height: 34px;
     font-size: 20px;
   }
 
-  .banner-arrow.prev {
+  .banner-slider .banner-arrow.prev {
     left: 8px;
   }
 
-  .banner-arrow.next {
+  .banner-slider .banner-arrow.next {
     right: 8px;
   }
-     }
-/* Banner slider - smooth movement */
-.banner-slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  isolation: isolate;
 }
 
-.banner-slider #banner {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 1;
-  transition: none;
-}
-
-.banner-slider .banner-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 2;
-  transition: transform 450ms ease-in-out;
-  will-change: transform;
-}
-
-.banner-slider #banner.sliding-out {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-/* Keep arrows visible */
-.banner-slider .banner-arrow {
-  z-index: 5;
-}
 /* Fix banner size and prevent overflow */
 .banner {
   position: relative;
