@@ -561,3 +561,23 @@ khqrModal.addEventListener("click", function (e) {
     }
 });
 
+/* Update selected Free Fire package and price */
+document.addEventListener("click", function (event) {
+  const card = event.target.closest(".package-card");
+  if (!card) return;
+
+  const selectedPackage = document.getElementById("selectedPackage");
+  const selectedPrice = document.getElementById("selectedPrice");
+
+  // Run only on pages with the payment summary
+  if (!selectedPackage || !selectedPrice) return;
+
+  const name = card.querySelector("h3");
+  const price = card.querySelector("p");
+
+  if (!name || !price) return;
+
+  selectedPackage.textContent = name.textContent.trim();
+  selectedPrice.textContent = price.textContent.trim();
+});
+                          
