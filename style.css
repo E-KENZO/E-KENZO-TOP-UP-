@@ -1506,3 +1506,20 @@ img {
 .banner-slider .banner-arrow {
   z-index: 5;
 }
+/* Keep the banner above overlapping page elements */
+.banner {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.banner-slider {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.banner-slider #banner,
+.banner-slider .banner-slide {
+  pointer-events: none;
+   }
