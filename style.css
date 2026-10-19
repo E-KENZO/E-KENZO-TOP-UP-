@@ -1386,11 +1386,3 @@ img {
     box-shadow: 0 0 0 7px rgba(0, 230, 118, 0);
   }
      }
-   
-/* Enlarge Telegram icon */
-.telegram-float img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-                      }
-     
