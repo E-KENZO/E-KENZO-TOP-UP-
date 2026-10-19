@@ -1,4 +1,4 @@
-/* ======================================
+ឪ/* ======================================
    RESET
 ====================================== */
 
@@ -1384,5 +1384,68 @@ img {
     opacity: 0.65;
     transform: scale(1.2);
     box-shadow: 0 0 0 7px rgba(0, 230, 118, 0);
+  }
+     }
+/* Banner slider */
+.banner-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Banner image */
+.banner-slider #banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Left and right arrow buttons */
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.banner-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.banner-arrow.prev {
+  left: 12px;
+}
+
+.banner-arrow.next {
+  right: 12px;
+}
+
+/* Mobile size */
+@media (max-width: 600px) {
+  .banner-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
+  .banner-arrow.prev {
+    left: 8px;
+  }
+
+  .banner-arrow.next {
+    right: 8px;
   }
      }
