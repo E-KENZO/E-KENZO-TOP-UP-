@@ -56,59 +56,107 @@ const banners = [
 ];
 
 let currentBanner = 0;
-
 const banner = document.getElementById("banner");
-const dots = document.querySelectorAll(".dot");
+const dots = document.querySelectorAll(".banner + .dots .dot");
+const prevBtn = document.querySelector(".banner-arrow.prev");
+const nextBtn = document.querySelector(".banner-arrow.next");
+
 let bannerTimer;
+let isBannerMoving = false;
 
-function showBanner(index) {
-    if (!banner || banners.length === 0) return;
+function showBanner(index, direction = 1) {
+    if (!banner || isBannerMoving || banners.length === 0) return;
 
-    banner.classList.add("fade-out");
+    index = (index + banners.length) % banners.length;
 
-    const nextImage = new Image();
+    if (index === currentBanner) return;
 
-    nextImage.onload = function () {
-        banner.src = banners[index];
+    const slider = document.querySelector(".banner-slider");
+    if (!slider) return;
 
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === index);
-        });
+    isBannerMoving = true;
 
+    const oldBanner = banner;
+    const newBanner = document.createElement("img");
+
+    newBanner.src = banners[index];
+    newBanner.alt = "Banner";
+    newBanner.className = "banner-slide";
+    newBanner.style.transform =
+        direction === 1 ? "translateX(100%)" : "translateX(-100%)";
+
+    slider.appendChild(newBanner);
+
+    newBanner.onload = () => {
         requestAnimationFrame(() => {
-            banner.classList.remove("fade-out");
+            oldBanner.classList.add("sliding-out");
+            oldBanner.style.transform =
+                direction === 1 ? "translateX(-100%)" : "translateX(100%)";
+
+            newBanner.style.transform = "translateX(0)";
         });
+
+        setTimeout(() => {
+            oldBanner.src = banners[index];
+            oldBanner.style.transform = "";
+            oldBanner.classList.remove("sliding-out");
+            newBanner.remove();
+
+            currentBanner = index;
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+
+            isBannerMoving = false;
+        }, 450);
     };
 
-    nextImage.onerror = function () {
-        banner.classList.remove("fade-out");
+    newBanner.onerror = () => {
+        newBanner.remove();
+        isBannerMoving = false;
         console.error("មិនអាចផ្ទុករូប Banner:", banners[index]);
     };
-
-    nextImage.src = banners[index];
 }
 
 function nextBanner() {
-    currentBanner = (currentBanner + 1) % banners.length;
-    showBanner(currentBanner);
+    showBanner((currentBanner + 1) % banners.length, 1);
+}
+
+function previousBanner() {
+    showBanner((currentBanner - 1 + banners.length) % banners.length, -1);
+}
+
+function resetBannerTimer() {
+    clearInterval(bannerTimer);
+    bannerTimer = setInterval(nextBanner, 3000);
 }
 
 if (banner) {
-    showBanner(currentBanner);
-    bannerTimer = setInterval(nextBanner, 3000);
+    resetBannerTimer();
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+        nextBanner();
+        resetBannerTimer();
+    });
+}
+
+if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+        previousBanner();
+        resetBannerTimer();
+    });
 }
 
 dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
-        currentBanner = index;
-        showBanner(currentBanner);
-
-        if (bannerTimer) {
-            clearInterval(bannerTimer);
-            bannerTimer = setInterval(nextBanner, 3000);
-        }
+        showBanner(index, index > currentBanner ? 1 : -1);
+        resetBannerTimer();
     });
 });
+
         
 // ===================================
 // PART 3 : FREE FIRE PACKAGE PANEL
