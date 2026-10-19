@@ -1304,3 +1304,43 @@ img {
   user-select: none;
   pointer-events: none;
    }
+/* Telegram icon: smooth left-right movement */
+@keyframes telegramWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes onlineBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.65);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 7px rgba(0, 230, 118, 0);
+  }
+}
+
+/* Apply movement to Telegram icon */
+.telegram-icon {
+  transform-origin: center;
+  animation: telegramWiggle 1.8s ease-in-out infinite;
+}
+
+/* Apply blinking to the green online dot */
+.online-dot {
+  animation: onlineBlink 1.2s ease-out infinite;
+   }
+   
