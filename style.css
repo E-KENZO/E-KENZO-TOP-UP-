@@ -1100,4 +1100,186 @@ font-size:17px;
         height: 52px;
         flex-basis: 52px;
     }
-  }
+}
+/* ===== E-KENZO QR PAYMENT PREMIUM POLISH ===== */
+
+.khqr-modal {
+    padding: 0;
+    background: rgba(8, 12, 30, 0.72);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.khqr-sheet {
+    width: 100%;
+    max-width: 480px;
+    max-height: 90dvh;
+    padding: 30px 20px 24px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -16px 50px rgba(18, 12, 48, 0.22);
+}
+
+.khqr-sheet h2 {
+    margin: 12px 0 22px;
+    color: #321078;
+    font-size: clamp(23px, 6vw, 29px);
+    font-weight: 900;
+    letter-spacing: -0.4px;
+}
+
+.khqr-image {
+    width: 100%;
+    max-width: 340px;
+    max-height: 43dvh;
+    margin: 0 auto 24px;
+    padding: 10px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid #eee7ff;
+    border-radius: 24px;
+    box-shadow:
+        0 12px 32px rgba(49, 16, 120, 0.08),
+        0 2px 6px rgba(49, 16, 120, 0.04);
+}
+
+.close-khqr {
+    top: 14px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: #f1ebff;
+    border: 1px solid #e5d8ff;
+    color: #4c1d95;
+    font-size: 25px;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.close-khqr:active {
+    transform: scale(.92);
+    background: #e7dcff;
+}
+
+.payment-timer {
+    gap: 10px;
+    margin: 20px 0 10px;
+    color: #34304a;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+#paymentCountdown {
+    padding: 5px 12px;
+    color: #dc3545;
+    background: #fff0f1;
+    border: 1px solid #ffd9dd;
+    border-radius: 12px;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 380px) {
+    .khqr-sheet {
+        padding: 26px 14px 20px;
+        border-radius: 26px 26px 0 0;
+    }
+
+    .khqr-image {
+        max-width: 300px;
+        max-height: 40dvh;
+        padding: 7px;
+        border-radius: 20px;
+    }
+
+    .close-khqr {
+        top: 10px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+    }
+       }
+   
+/* ===== E-KENZO CLEAN KHQR PAYMENT PANEL ===== */
+
+/* ផ្ទៃខាងក្រោយពេលបើកផ្ទាំងបង់ប្រាក់ */
+.khqr-modal {
+    background: rgba(15, 23, 42, 0.55);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+/* ដកស៊ុមពណ៌ស្វាយ និងពន្លឺពណ៌ស្វាយខាងក្រៅ */
+.khqr-sheet {
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+    border-radius: 28px 28px 0 0;
+    padding: 28px 18px 24px;
+}
+
+/* ចំណងជើង */
+.khqr-sheet h2 {
+    color: #321078;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 12px 0 20px;
+}
+
+/* រក្សាផ្ទាំង KHQR ដើម */
+.khqr-image {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    max-height: 46vh;
+    height: auto;
+    object-fit: contain;
+    margin: 12px auto 22px;
+    padding: 0;
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ប៊ូតុងបិទពណ៌សសាមញ្ញ */
+.close-khqr {
+    background: #f3f4f6;
+    color: #333333;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+}
+
+/* ម៉ោងរាប់ថយក្រោយ */
+.payment-timer {
+    color: #333333;
+    font-weight: 700;
+    margin: 18px 0 10px;
+}
+
+#paymentCountdown {
+    color: #dc2626;
+    background: #fff1f2;
+    border-radius: 10px;
+    padding: 4px 10px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* ទូរសព្ទ */
+@media (max-width: 380px) {
+    .khqr-sheet {
+        padding: 24px 14px 20px;
+    }
+
+    .khqr-sheet h2 {
+        font-size: 22px;
+    }
+
+    .khqr-image {
+        max-width: 300px;
+    }
+   }
+   
