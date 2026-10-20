@@ -1692,3 +1692,82 @@ font-size:17px;
         transform:translateY(0);
     }
    }
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 18px;
+
+    background:linear-gradient(135deg,#6c2cff,#4f46e5);
+
+    border-radius:0 0 22px 22px;
+
+    box-shadow:0 10px 25px rgba(108,44,255,.28);
+
+    backdrop-filter:blur(12px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid rgba(255,255,255,.25);
+
+    box-shadow:0 0 15px rgba(255,255,255,.25);
+}
+
+.logo-text h1{
+    font-size:22px;
+    font-weight:800;
+    color:#fff;
+    letter-spacing:.6px;
+    margin:0;
+}
+
+.logo-text p{
+    margin-top:3px;
+    font-size:13px;
+    color:rgba(255,255,255,.85);
+}
+
+.menu-btn{
+    width:46px;
+    height:46px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.menu-btn:hover{
+    background:rgba(255,255,255,.22);
+   }
